@@ -1,0 +1,2 @@
+What I'm trying to say here is that metadata (data about data) should be stored as attributes, and the data itself should be stored as elements.
+('W1','W2','W4','M1','M3','M6','MA','IO','IR')

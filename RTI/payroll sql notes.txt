@@ -1,0 +1,20 @@
+Run Payroll
+
+Re-run
+1. Get the payroll freq 
+2. Get payroll run for payroll freq
+3. Update emp pay result
+	a. payroll run id from payroll run
+	b. payrool tax year
+	c. frequency id
+	d. employee_payroll_details_payroll_id (this is the emp's pay details at the time)
+
+4. Update payroll_frequency
+	a. last_payroll_run_number
+
+5. Update payroll_run
+	a. payroll_run_on has default timestamp
+
+
+
+AFTER A PAYROLL RUN NEED A FUNC TO UPDATE ALL THE YTD

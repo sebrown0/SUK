@@ -140,18 +140,6 @@ BEGIN
 		("NI123456B", 4333.33)££
 
 	DELETE FROM `salaroo_uk`.`employee_payroll_result` WHERE id !=''££
-     -- SET payrollRunId = 8££
-    /*SELECT pr.id INTO payrollRunId FROM 
-		payroll_run pr
-	LEFT JOIN 
-		payroll_frequency pf
-	ON
-		pr.payroll_frequency_id = pf.id
-	WHERE
-		pf.pay_frequency_id = "W1"
-	AND
-		pf.last_payroll_run_number = 0££*/
-    
 	INSERT INTO `salaroo_uk`.`employee_payroll_result` 
 		(`payroll_run_id`, `payroll_run_tax_year_id`, `payroll_run_payroll_frequency_id`, `employee_payroll_details_payroll_id`, `gross_pay`, `basic_pay`, `net_pay`, `bonus`) 
 	VALUES 
