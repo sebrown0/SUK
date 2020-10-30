@@ -30,3 +30,9 @@ INSERT INTO  employee_basic
 	(employee_payroll_details_payroll_id, rate) 
 VALUES 
 	("NI123456B", 4333.33);
+
+DELETE FROM `salaroo_uk`.`employee_payroll_result` WHERE id !='';    
+INSERT INTO `salaroo_uk`.`employee_payroll_result` 
+	(`payroll_run_id`, `payroll_run_tax_year_id`, `payroll_run_payroll_frequency_id`, `employee_payroll_details_payroll_id`, `gross_pay`, `basic_pay`, `net_pay`, `bonus`) 
+VALUES 
+	(1, "2020", 1, "NI123456B", 1200, 1000, 800, 0);
