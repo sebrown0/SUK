@@ -2,18 +2,10 @@ DELIMITER $$
 USE salaroo_uk $$
 DROP PROCEDURE IF EXISTS `initialise_db` $$
 CREATE PROCEDURE initialise_db
-BEGIN
+BEGIN	
+    DELIMITER ££        
+	SET foreign_key_checks = 0££           
 	
-    DELIMITER ££    
-	SET foreign_key_checks = 0££   
-    
-	/* Tax Year */
-    DELETE FROM tax_year WHERE id !=''££
-	INSERT INTO  tax_year
-		(id, employer_id) 
-	VALUES 
-		("2020", "DAK1")££    
-    
 	/* Employee */
 	DELETE FROM employee WHERE id !=''££
 	INSERT INTO employee 
@@ -97,11 +89,11 @@ BEGIN
 	/*Student Loan*/
 	DELETE FROM student_loan WHERE id !=''££
 	INSERT INTO  student_loan
-		(employee_id, start_date, amount, loan_type) 
+		(employee_id, start_date, original_amount, loan_type, current_amount) 
 	VALUES 
-		("LS1", "2020/01/01", 1000, 1),
-		("LS1", "2020/01/01", 4000, 2),
-		("LS1", "2020/01/01", 3000, 3)££
+		("LS1", "2020/01/01", 1000, 1, 1000),
+		("LS1", "2020/01/01", 4000, 2, 4000),
+		("LS1", "2020/01/01", 3000, 3, 3000)££
     
     /****************
     * PAYROLL START *
@@ -137,7 +129,7 @@ BEGIN
 	INSERT INTO  employee_basic
 		(employee_payroll_details_payroll_id, rate) 
 	VALUES 
-		("NI123456B", 4333.33)££
+		("NI123456D", 4333.33)££
 
 	DELETE FROM `salaroo_uk`.`employee_payroll_result` WHERE id !=''££
 	INSERT INTO `salaroo_uk`.`employee_payroll_result` 
@@ -152,8 +144,34 @@ BEGIN
 	WHERE
 		pf.pay_frequency_id = "W1"
 	AND
-		pf.last_payroll_run_number = 0), "2020", 1, "NI123456B", 1200, 1000, 800, 0)££
+		pf.last_payroll_run_number = 0), "2020", 1, "NI123456D", 1200, 1000, 800, 0)££
+        
+	DELETE FROM `salaroo_uk`.`payroll_result_deduction` WHERE id != '';
     
+    INSERT INTO `salaroo_uk`.`payroll_result_deduction` 
+		(`payroll_run_id`, `payroll_run_tax_year_id`, `payroll_run_payroll_frequency_id`, `employee_payroll_details_payroll_id`, `paye_tax`, `ni`, `pension`, `total`) 
+	VALUES 
+		((SELECT pr.id FROM 
+		payroll_run pr
+	LEFT JOIN 
+		payroll_frequency pf
+	ON
+		pr.payroll_frequency_id = pf.id
+	WHERE
+		pf.pay_frequency_id = "W1"
+	AND
+		pf.last_payroll_run_number = 0), "2020", 1, "NI123456D", 123.45, 43.21, 0, 0);        
+	
+	DELETE FROM	`salaroo_uk`.`student_loan_deduction` WHERE id != ''££
+    
+	SELECT max(prd.id) INTO @max_id FROM payroll_result_deduction prd££
+    SELECT sl.id INTO @student_loan_id FROM student_loan sl WHERE sl.loan_type = 1 AND sl.employee_id = "LS1"££
+    
+    INSERT INTO `salaroo_uk`.`student_loan_deduction` 
+		(`payroll_result_deduction_id`, `amount`, `loan_type`, `student_loan_id`, `student_loan_employee_id`) 
+	VALUES 
+		(@max_id, 50.12, 1, @student_loan_id, "LS1")££
+        
     SET foreign_key_checks = 1££
      
 END $$
