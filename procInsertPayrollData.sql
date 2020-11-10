@@ -1,6 +1,6 @@
-DELIMITER //
-USE salaroo_uk //
-DROP PROCEDURE IF EXISTS `insert_payroll_data` //
+DELIMITER $$
+USE salaroo_uk $$
+DROP PROCEDURE IF EXISTS `insert_payroll_data` $$
 CREATE PROCEDURE insert_payroll_data (IN pay_id VARCHAR(14), IN basic_units INT, IN freq_id VARCHAR(3), IN tax_yr VARCHAR(4))
 BEGIN	
 	DECLARE salary_type VARCHAR(2);    
@@ -11,6 +11,9 @@ BEGIN
     DECLARE the_loan_type ENUM('1', '2', '3');
     DECLARE payroll_data_id INT;
     
+    /* 	Using current amount but this will have to change to the actual calculated amount.
+		Probably from a temporary table
+	*/
     DECLARE loan_cursor CURSOR FOR SELECT loan_type, current_amount FROM student_loan WHERE employee_id =  getEmpId_ForPayrollId(pay_id);
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET bDone=1;
     
@@ -47,5 +50,5 @@ BEGIN
     
     -- Insert a row for each AEO
     -- etc, etc.........
-END//
+END$$
 DELIMITER ;

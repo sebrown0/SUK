@@ -1,6 +1,6 @@
-DELIMITER //
-USE salaroo_uk //
-DROP PROCEDURE IF EXISTS `create_payroll_dates` //
+DELIMITER $$
+USE salaroo_uk $$
+DROP PROCEDURE IF EXISTS `create_payroll_dates` $$
 CREATE PROCEDURE create_payroll_dates (IN tax_year varchar(4))
 BEGIN	
 	DECLARE pay_num INT;
@@ -9,7 +9,9 @@ BEGIN
     DECLARE end_date DATE;
     DECLARE last_day DATE;
     
-    SET tax_year = year(date_sub(concat(tax_year,'-01-01'), INTERVAL 1 YEAR));
+    DELETE FROM payroll_dates WHERE id != '' AND payroll_dates.tax_year = tax_year;
+    
+    -- SET tax_year = year(date_sub(concat(tax_year,'-01-01'), INTERVAL 1 YEAR));
     SET end_date = DATE(concat(tax_year,'-04-05'));
     
     -- M1
@@ -53,5 +55,5 @@ BEGIN
 		VALUES 
 			(tax_year, 'W1', pay_num, date_from, last_day);
     	
-END//
+END$$
 DELIMITER ;
