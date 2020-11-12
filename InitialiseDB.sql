@@ -13,8 +13,8 @@ CALL initialise_payroll(@tax_yr);
 CALL initialise_leave(@tax_yr);
 
 -- Insert payroll run for each employee
-CALL insert_payroll_data('NI123456B', 1, "M1", @tax_yr);
-CALL insert_payroll_data('NI123456D', 1, "M1", @tax_yr);
+-- CALL insert_payroll_data('NI123456B', 1, "M1", @tax_yr);
+-- CALL insert_payroll_data('NI123456D', 1, "M1", @tax_yr);
 
 SET foreign_key_checks = 1;
 

@@ -22,7 +22,11 @@ BEGIN
 		(8, employer_tax_year, "IO", 0),
 		(9, employer_tax_year, "IR", 0);
 		
-	-- Payroll Run
+END$$
+DELIMITER ;
+    
+    /*  
+	-- Payroll Run    
 	DELETE FROM payroll_run WHERE id !='' AND tax_year_id = employer_tax_year;
 	INSERT INTO  payroll_run
 		(payroll_number, tax_year_id, payroll_frequency_id, payroll_dates_id)
@@ -72,5 +76,5 @@ BEGIN
 		(`payroll_result_deduction_id`, `amount`, `loan_type`, `student_loan_id`, `student_loan_employee_id`)
 	Values
 		(@max_id, 50.12, 1, @student_loan_id, "LS1");
-	END$$
-    DELIMITER ;
+	
+    */

@@ -127,7 +127,15 @@ BEGIN
 		("HS1", 1, 0, 0, "S"),
 		("MAS1", 0, 0, 0, "S"),
 		("SW1", 1, 0, 0, "S");
-    
+        
+	/* AEOs */
+    DELETE FROM employee_aeo WHERE id !='';
+    INSERT INTO 
+		employee_aeo (`employee_id`, `start_date`, `original_amount`, `current_amount`, `aeo_type_id`) 
+	VALUES 
+		('LS1', '2020-01-01', 1000, 1000, 3),
+        ('LS1', '2020-01-01', 100, 100, 1),
+        ('MS1', '2020-01-01', 300, 300, 2);
 END $$
 
 DROP PROCEDURE IF EXISTS initialise_aeo $$
@@ -160,7 +168,7 @@ END$$
 DROP PROCEDURE IF EXISTS initialise_payroll $$
 CREATE PROCEDURE initialise_payroll (IN employer_tax_year VARCHAR(4))
 BEGIN	
-	SET foreign_key_checks = 0;
+    SET foreign_key_checks = 0;
     
     CALL create_payroll_dates(employer_tax_year);
 
@@ -179,58 +187,7 @@ BEGIN
 		(8, employer_tax_year, "IO", 0),
 		(9, employer_tax_year, "IR", 0);
 		
-	-- Payroll Run
-	DELETE FROM payroll_run WHERE id !='' AND tax_year_id = employer_tax_year;
-	INSERT INTO  payroll_run
-		(payroll_number, tax_year_id, payroll_frequency_id, payroll_dates_id)
-	Values
-		(1, employer_tax_year, 1, getPayrollDateId_ForPayrollNum("W1",employer_tax_year,1)),
-		(1, employer_tax_year, 4, getPayrollDateId_ForPayrollNum("M1",employer_tax_year,1));
-
-	-- Employee Payroll Result
-	DELETE FROM `employee_payroll_result` WHERE id !='';
-	INSERT INTO `employee_payroll_result`
-		(`payroll_run_id`, `payroll_run_tax_year_id`, `payroll_run_payroll_frequency_id`, `employee_payroll_details_payroll_id`, `gross_pay`, `basic_pay`, `net_pay`, `bonus`)
-	Values
-		((SELECT pr.id FROM
-		payroll_run pr
-	  Left Join
-		payroll_frequency pf
-	  ON
-		pr.payroll_frequency_id = pf.Id
-	  WHERE
-		pf.pay_frequency_id = "W1"
-	  AND
-		pf.last_payroll_run_number = 0), employer_tax_year, 1, "NI123456D", 1200, 1000, 800, 0);
-			
-	-- Payroll Result Deduction
-	DELETE FROM `payroll_result_deduction` WHERE id != '';    
-	INSERT INTO `payroll_result_deduction`
-		(`payroll_run_id`, `payroll_run_tax_year_id`, `payroll_run_payroll_frequency_id`, `employee_payroll_details_payroll_id`, `paye_tax`, `ni`, `pension`, `total`)
-	  Values
-		((SELECT pr.id FROM
-		payroll_run pr
-	  Left Join
-		payroll_frequency pf
-	  ON
-		pr.payroll_frequency_id = pf.Id
-	  WHERE
-		pf.pay_frequency_id = "W1"
-	  AND
-		pf.last_payroll_run_number = 0), employer_tax_year, 1, "NI123456D", 123.45, 43.21, 0, 0);
-	  
-	-- Student Loan Deduction
-	DELETE FROM `salaroo_uk`.`student_loan_deduction` WHERE id != '';
-		
-	SELECT max(prd.id) INTO @max_id FROM payroll_result_deduction prd;
-	SELECT sl.id INTO @student_loan_id FROM student_loan sl WHERE sl.loan_type = 1 AND sl.employee_id = "LS1";
-		
-	INSERT INTO `salaroo_uk`.`student_loan_deduction`
-		(`payroll_result_deduction_id`, `amount`, `loan_type`, `student_loan_id`, `student_loan_employee_id`)
-	Values
-		(@max_id, 50.12, 1, @student_loan_id, "LS1");
-END$$
-    
+END$$    
     
 DROP PROCEDURE IF EXISTS `insert_payroll_data` $$
 CREATE PROCEDURE insert_payroll_data (IN pay_id VARCHAR(14), IN basic_units INT, IN freq_id VARCHAR(3), IN tax_yr VARCHAR(4))
@@ -284,6 +241,7 @@ BEGIN
 	-- etc, etc.........
 END$$
 
+-- Leave
 DROP PROCEDURE IF EXISTS `initialise_leave` $$
 CREATE PROCEDURE initialise_leave (IN employer_tax_year VARCHAR(4))
 BEGIN	
@@ -296,8 +254,29 @@ BEGIN
 		("Sick Leave", 21, employer_tax_year),
 		("Maternity Leave", 30, employer_tax_year),
 		("Paternity Leave", 30, employer_tax_year);
+        
+	DELETE FROM `leave_booking` WHERE id != '';   
+	INSERT INTO 
+		`leave_booking` (`leave_type_id`, `num_days_booked`, `employee_id`, `date_from`, `date_to`) 
+	VALUES 
+		(1, 8, 'MAS1', '2021-04-09', '2021-04-16'),
+		(1, 1, 'LS1', '2021-04-06', '2021-04-06'),
+        (2, 2, 'LS1', '2021-05-06', '2021-05-07'),
+        (3, 3, 'LS1', '2021-06-16', '2021-06-18'),
+        (1, 1, 'MS1', '2021-04-06', '2021-04-06'),
+        (2, 2, 'MS1', '2021-05-06', '2021-05-07'),
+        (3, 3, 'MS1', '2021-06-16', '2021-06-18'),
+        (1, 1, 'HS1', '2021-04-06', '2021-04-06'),
+        (2, 3, 'HS1', '2021-04-11', '2021-04-13'),
+        (3, 3, 'HS1', '2021-06-16', '2021-06-18'),
+        (4, 3, 'HS1', '2021-07-16', '2021-07-18'),
+        (1, 1, 'TR1', '2021-06-06', '2021-06-06'),
+        (2, 7, 'TR1', '2021-07-10', '2021-07-17'),
+        (1, 3, 'BM1', '2021-05-06', '2021-05-08'),
+        (2, 4, 'BM1', '2021-07-10', '2021-07-14');
 END $$
 
+-- Payroll Dates
 DROP PROCEDURE IF EXISTS `create_payroll_dates` $$
 CREATE PROCEDURE create_payroll_dates (IN tax_year varchar(4))
 BEGIN	
@@ -316,13 +295,13 @@ BEGIN
     SET pay_num = 1;
     SET date_from = concat(tax_year,'-04-06');
     SET date_to = concat(tax_year,'-05-05');
-    WHILE pay_num <= 12 DO
-		SET date_from = date_add(date_from, INTERVAL 1 MONTH);
-        SET date_to = date_add(date_to, INTERVAL 1 MONTH);
+    WHILE pay_num <= 12 DO		
 		INSERT INTO 
 			`payroll_dates` (`tax_year`, `pay_frequency_id`, `payroll_number`, `date_from`, `date_to`) 
 		VALUES 
 			(tax_year, 'M1', pay_num, date_from, date_to);
+		SET date_from = date_add(date_from, INTERVAL 1 MONTH);
+        SET date_to = date_add(date_to, INTERVAL 1 MONTH);
 		SET pay_num = pay_num + 1;        
     END WHILE;
     
@@ -349,9 +328,10 @@ BEGIN
     END WHILE;
     
     INSERT INTO 
-			`payroll_dates` (`tax_year`, `pay_frequency_id`, `payroll_number`, `date_from`, `date_to`) 
-		VALUES 
-			(tax_year, 'W1', pay_num, date_from, last_day);
+		`payroll_dates` (`tax_year`, `pay_frequency_id`, `payroll_number`, `date_from`, `date_to`) 
+	VALUES 
+		(tax_year, 'W1', pay_num, date_from, last_day);
     	
 END$$
+
 DELIMITER ;

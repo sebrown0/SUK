@@ -85,5 +85,11 @@ BEGIN
 		("MAS1", 0, 0, 0, "S"),
 		("SW1", 1, 0, 0, "S");
     
+    /* AEOs */
+    DELETE FROM employee_aeo WHERE id !='';
+    INSERT INTO 
+		employee_aeo (`employee_id`, `start_date`, `original_amount`, `current_amount`, `aeo_type_id`) 
+	VALUES 
+		('LS1', '2020-01-01', 1000, 1000, 3);
 END $$
 DELIMITER ;

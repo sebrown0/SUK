@@ -18,13 +18,13 @@ BEGIN
     SET pay_num = 1;
     SET date_from = concat(tax_year,'-04-06');
     SET date_to = concat(tax_year,'-05-05');
-    WHILE pay_num <= 12 DO
-		SET date_from = date_add(date_from, INTERVAL 1 MONTH);
-        SET date_to = date_add(date_to, INTERVAL 1 MONTH);
+    WHILE pay_num <= 12 DO		
 		INSERT INTO 
 			`payroll_dates` (`tax_year`, `pay_frequency_id`, `payroll_number`, `date_from`, `date_to`) 
 		VALUES 
 			(tax_year, 'M1', pay_num, date_from, date_to);
+		SET date_from = date_add(date_from, INTERVAL 1 MONTH);
+        SET date_to = date_add(date_to, INTERVAL 1 MONTH);
 		SET pay_num = pay_num + 1;        
     END WHILE;
     
@@ -51,9 +51,9 @@ BEGIN
     END WHILE;
     
     INSERT INTO 
-			`payroll_dates` (`tax_year`, `pay_frequency_id`, `payroll_number`, `date_from`, `date_to`) 
-		VALUES 
-			(tax_year, 'W1', pay_num, date_from, last_day);
+		`payroll_dates` (`tax_year`, `pay_frequency_id`, `payroll_number`, `date_from`, `date_to`) 
+	VALUES 
+		(tax_year, 'W1', pay_num, date_from, last_day);
     	
 END$$
 DELIMITER ;
