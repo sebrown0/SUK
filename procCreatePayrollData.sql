@@ -41,7 +41,7 @@ BEGIN
 		(thisPayrollNumber, taxYear, freqId, getPayrollDateId_ForPayrollNum(payFrequencyId, taxYear, thisPayrollNumber));
     
     SELECT max(id) INTO payrollRunId FROM payroll_run; -- Created a new payroll run and this is the ID.
-    
+
     -- PTRANS
     -- Insert a payroll data record for each included emp.
 	CALL create_payroll_data_entry(payrollRunId);
@@ -66,7 +66,7 @@ BEGIN
     CALL insert_payroll_aeos(payrollRunId);
     CALL insert_payroll_leave(payrollRunId);         
     CALL insert_payroll_basic_and_gross(payrollRunId);
-    
+   
 	-- PTRANS
 	-- Update payroll_frequency
 	UPDATE payroll_frequency SET last_payroll_run_number = thisPayrollNumber WHERE id = freqId;

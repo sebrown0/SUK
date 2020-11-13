@@ -4,9 +4,12 @@ USE salaroo_uk $$
 DROP PROCEDURE IF EXISTS get_payroll_aeo $$
 CREATE PROCEDURE get_payroll_aeo (
 	IN taxYear VARCHAR(4),
-    IN payFrequencyId INT,
-    IN payrollNum INT)
+    IN payFrequency VARCHAR(2),
+    IN payrollNum INT,
+    IN empPayrollId VARCHAR(45))
 BEGIN	
+	DECLARE freqId INT;
+    SET freqId = getFrequencyId(payFrequency, taxYear);
 	SELECT 
 		pd.employee_payroll_id, pd.payroll_run_id, 		
 		paeo.aeo_type_id, paeo.employee_aeo_id, paeo.id,
@@ -19,6 +22,12 @@ BEGIN
         LEFT JOIN employee_aeo aeo ON paeo.aeo_type_id = aeo.id
         LEFT JOIN aeo_type aeot ON aeo.aeo_type_id = aeot.id
 	WHERE
-		pr.payroll_number = payrollNum AND pr.tax_year_id = taxYear AND pr.payroll_frequency_id = payFrequencyId;    
+		pr.payroll_number = payrollNum 
+	AND 
+		pr.tax_year_id = taxYear 
+	AND 
+		pr.payroll_frequency_id = freqId
+	AND
+		pd.employee_payroll_id = empPayrollId;	 
 END $$
 DELIMITER ;
