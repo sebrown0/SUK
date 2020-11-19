@@ -28,8 +28,8 @@ BEGIN
             
     -- Get employees with the pay frequency
     DROP TABLE IF EXISTS employees_to_include;
-    CREATE TEMPORARY TABLE employees_to_include	SELECT * FROM employee_payroll_details epd WHERE epd.pay_frequency = freqId;    
-
+	CREATE TEMPORARY TABLE 	employees_to_include SELECT * FROM employee_payroll_details epd WHERE epd.pay_frequency = freqId;   
+    
     -- Have to use another temp tbl because can't reference a temp table (employees_to_include) twice in MySQL!
     DROP TABLE IF EXISTS included_emps_payroll_id;
     CREATE TEMPORARY TABLE included_emps_payroll_id SELECT employees_to_include.payroll_id FROM employees_to_include;
