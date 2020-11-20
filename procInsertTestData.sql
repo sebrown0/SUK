@@ -37,8 +37,8 @@ BEGIN
 					payroll_test_data (`emp_payroll_id`, `payroll_run_id`, `payroll_run_tax_year_id`, `payroll_run_payroll_frequency_id`, `commission`, `overtime_15`, `bonus`, `expenses`, `basic_hours`) 
 				VALUES 
 					('NI123456B', payrollRunId, taxYr, payFreqId, 0, 0, 0, 0, 0),
-                    ('NI123456C', payrollRunId, taxYr, payFreqId, 0, 10, 0, 0, 40), -- THE ONLY VARIABLE HOURS EMP
-                    ('NI123456D', payrollRunId, taxYr, payFreqId, 0, 0, 234.45, 0, 0),
+                    ('NI123456C', payrollRunId, taxYr, payFreqId, 1000, 10, 0, 0, 173.33), -- THE ONLY VARIABLE HOURS EMP
+                    ('NI123456D', payrollRunId, taxYr, payFreqId, 850, 0, 950, 1000, 0),
                     ('NI123456F', payrollRunId, taxYr, payFreqId, 0, 0, 0, 0, 0),
                     ('NI123456G', payrollRunId, taxYr, payFreqId, 0, 0, 0, 0, 0),
                     ('NI123456I', payrollRunId, taxYr, payFreqId, 0, 0, 0, 0, 0),

@@ -99,18 +99,18 @@ BEGIN
 	  /*Employee Payroll Details*/
 	DELETE FROM employee_payroll_details WHERE id !='';
 	INSERT INTO employee_payroll_details
-		(employee_id, payroll_id, tax_rate, rate_of_pay, commision_percentage, gets_blind_allowance, nic, pay_frequency)
+		(employee_id, payroll_id, tax_rate, rate_of_pay, commision_percentage, gets_blind_allowance, nic, pay_frequency, tax_code, avg_hours_per_week)
 	VALUES
-		("MS1","NI123456B", 0, 4333.33, 0.00, 0, "A", "M1"),
-		("BS1","NI123456C", 0, 8.83, 0.00, 0, "A", "M1"),
-		("LS1","NI123456D", 0, 10000.00, 0.00, 0, "H", "M1"),
-		("TR1","NI123456F", 0, 1500.00, 0.00, 0, "A", "M1"),
-		("CE1","NI123456G", 0, 2400.00, 0.00, 0, "C", "M1"),
-		("BM1","NI123456I", 0, 13000.00, 0.00, 0, "A", "M1"),
-		("QE2","NI123456J", 0, 5000.00, 0.00, 0, "C", "M1"),
-		("HS1","NI123456A", 0, 2000, 0.00, 0, "A", "W1"),
-		("MAS1","NI123456E", 0, 4000, 0.00, 0, "Z", "W1"),
-		("SW1","NI123456H", 0, 3000.00, 0.00, 1, "A", "W1");
+		("MS1","NI123456B", 40, 4333.33, 0.00, 0, "A", "M1", "1250M1", 40),
+		("BS1","NI123456C", 20, 8.83, 0.00, 0, "A", "M1", "1250L", 40),
+		("LS1","NI123456D", 45, 10000.00, 0.00, 0, "H", "M1", "1250L", 40),
+		("TR1","NI123456F", 20, 1500.00, 0.00, 0, "A", "M1", "1250L", 50),
+		("CE1","NI123456G", 20, 2400.00, 0.00, 0, "C", "M1", "1250L", 40),
+		("BM1","NI123456I", 45, 13000.00, 0.00, 0, "A", "M1", "1250L", 20),
+		("QE2","NI123456J", 40, 5000.00, 0.00, 0, "C", "M1", "NT", 5),
+		("HS1","NI123456A", 20, 2000, 0.00, 0, "A", "W1", "1250L", 40),
+		("MAS1","NI123456E", 40, 4000, 0.00, 0, "Z", "W1", "1250L", 20),
+		("SW1","NI123456H", 20, 3000.00, 0.00, 1, "A", "W1", "K1000", 60);
 
 	/*Employement Type*/
 	DELETE FROM employment_type WHERE id !='';
