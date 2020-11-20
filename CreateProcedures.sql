@@ -100,7 +100,7 @@ BEGIN
 	DELETE FROM employee_payroll_details WHERE id !='';
 	INSERT INTO employee_payroll_details
 		(employee_id, payroll_id, tax_rate, rate_of_pay, commision_percentage, gets_blind_allowance, nic, pay_frequency)
-	Values
+	VALUES
 		("MS1","NI123456B", 0, 4333.33, 0.00, 0, "A", "M1"),
 		("BS1","NI123456C", 0, 8.83, 0.00, 0, "A", "M1"),
 		("LS1","NI123456D", 0, 10000.00, 0.00, 0, "H", "M1"),
@@ -126,36 +126,38 @@ BEGIN
 		("QE2", 1, 0, 0, "P"),
 		("HS1", 1, 0, 0, "S"),
 		("MAS1", 0, 0, 0, "S"),
-		("SW1", 1, 0, 0, "S");
-        
-	/* AEOs */
-    DELETE FROM employee_aeo WHERE id !='';
-    INSERT INTO 
-		employee_aeo (`employee_id`, `start_date`, `original_amount`, `current_amount`, `aeo_type_id`) 
-	VALUES 
-		('LS1', '2020-01-01', 1000, 1000, 3),
-        ('LS1', '2020-01-01', 100, 100, 1),
-        ('MS1', '2020-01-01', 300, 300, 2);
+		("SW1", 1, 0, 0, "S");		
 END $$
 
 DROP PROCEDURE IF EXISTS initialise_aeo $$
 CREATE PROCEDURE initialise_aeo (IN employer_tax_year VARCHAR(4))
 BEGIN	
 	DECLARE loan_start DATE;
-	SET loan_start = date(concat(year(date_sub(concat(employer_tax_year,'-01-01'), INTERVAL 1 YEAR)),'-01-01'));
-
-	/* AEO Type */
-	DELETE FROM aeo_type WHERE id !='';
-	INSERT INTO 
-		`aeo_type` (`id`,`type_name`, `deduction_type`, `pe_type`, `unpaid_bf`, `priority_order`, `description`) 
+	
+	/* 
+    AEOs 
+    deduction type
+		D = % = 0 don't know why it's D and not P
+        V = value = 1
+        T = table = 2
+	protected earnings type
+		N = None = -1
+        P = % = 0
+        A = Value = 1        
+        D = daily = 2
+    */
+    DELETE FROM employee_aeo WHERE id !='';
+    INSERT INTO 
+		`salaroo_uk`.`employee_aeo` 
+        (`employee_id`, `date_added_to_payroll`, `is_priority`, `priority`, `status`, `frequency`, `type`, `agency`, 
+        `ytd`, `start_date`, `original_amount`, `current_amount`, `cumulative_amount`, `order_date`, `apply_from`, 
+        `stop_order`, `ref_number`, `description`, `pe_type`, `pe_amount`, `is_unpaid_bf`, `deduction_type`, `deduction_amount`) 
 	VALUES 
-		(1, "DEA", "T", "P", true, false, "Department of Work and Pensions"),
-		(2, "DEO", "V", "A", true, true, "Child support"),
-		(3, "CTAEO", "T", "N", false, true, "Council tax"),
-		(4, "CMA", "D", "D", false, true, "Current maintenance agreement"),
-		(5, "AEO", "T", "N", false, true, "Magistrates court AEO");
+		('LS1', '2020-01-01', 1, 1, 0, 0, 'DEO', 'CSA', 0, '2020-01-01', 1000, 1000, 0, '2020-01-01', '2020-01-01', 0, 'REF-1234', '', 'A', 0, 0, 'V', 123),
+        ('LS1', '2020-01-01', 1, 1, 0, 0, 'CTAEO', 'Springfield City Council', 0, '2020-01-01', 10000, 10000, 0, '2020-01-01', '2020-01-01', 0, 'REF-412', '', 'N', 5000, 0, 'T',3123);	
 		
 	/*Student Loan*/
+    SET loan_start = date(concat(year(date_sub(concat(employer_tax_year,'-01-01'), INTERVAL 1 YEAR)),'-01-01'));
 	DELETE FROM student_loan WHERE id !='';
 	INSERT INTO  student_loan
 		(employee_id, start_date, original_amount, loan_type, current_amount)

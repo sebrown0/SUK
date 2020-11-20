@@ -8,3 +8,5 @@ delete from payroll_data where id != '';
 UPDATE salaroo_uk.payroll_frequency set last_payroll_run_number = 0 WHERE id != -1;
 
 -- SELECT * FROM payroll_run;
+
+commit;

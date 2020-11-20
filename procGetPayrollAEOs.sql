@@ -11,16 +11,16 @@ BEGIN
 	DECLARE freqId INT;
     SET freqId = getFrequencyId(payFrequency, taxYear);
 	SELECT 
-		pd.employee_payroll_id, pd.payroll_run_id, 		
-		paeo.aeo_type_id, paeo.employee_aeo_id, paeo.id,
-        aeo.start_date, aeo.original_amount, aeo.current_amount,
-        aeot.type_name, aeot.deduction_type, aeot.pe_type, aeot.unpaid_bf, aeot.priority_order
+		pd.employee_payroll_id, 
+        emp_aeo.* 
 	FROM 
-		payroll_data pd
-		LEFT JOIN payroll_run pr ON pd.payroll_run_id = pr.id		
-		INNER JOIN payroll_aeo paeo ON pd.ID = paeo.payroll_data_id		
-        LEFT JOIN employee_aeo aeo ON paeo.aeo_type_id = aeo.id
-        LEFT JOIN aeo_type aeot ON aeo.aeo_type_id = aeot.id
+		salaroo_uk.payroll_aeo pay_aeo 	
+	INNER JOIN 
+		payroll_data pd ON 	pay_aeo.payroll_data_id = pd.id
+	INNER JOIN 
+		payroll_run pr ON pd.payroll_run_id = pr.id	
+	INNER JOIN
+		employee_aeo emp_aeo ON	pay_aeo.employee_aeo_id = emp_aeo.id		
 	WHERE
 		pr.payroll_number = payrollNum 
 	AND 
