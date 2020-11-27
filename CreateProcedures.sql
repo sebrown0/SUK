@@ -160,11 +160,14 @@ BEGIN
     SET loan_start = date(concat(year(date_sub(concat(employer_tax_year,'-01-01'), INTERVAL 1 YEAR)),'-01-01'));
 	DELETE FROM student_loan WHERE id !='';
 	INSERT INTO  student_loan
-		(employee_id, start_date, original_amount, loan_type, current_amount)
+		(employee_id, start_date, original_amount, loan_type, current_amount, reason_for_deduction, stop_notice_received)
 	VALUES
-		("LS1", loan_start, 1000, 1, 1000),
-		("LS1", loan_start, 4000, 2, 4000),
-		("LS1", loan_start, 3000, 3, 3000);
+		("LS1", '2020-01-01', 1000, 1, 1000, 'ER',0),
+		("LS1", loan_start, 4000, 2, 4000, 'P45',0),
+		("LS1", loan_start, 3000, 3, 3000, 'GR',0),
+		("MS1", loan_start, 1230, 1, 1230, 'SR',0),
+		("MS1", loan_start, 4320, 2, 4320, 'SC',0),
+		("MS1", loan_start, 1983, 3, 1983, 'ER',0);
 END$$
     
 DROP PROCEDURE IF EXISTS initialise_payroll $$

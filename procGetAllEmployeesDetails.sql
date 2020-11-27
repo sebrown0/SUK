@@ -1,7 +1,7 @@
 DELIMITER $$
 USE salaroo_uk $$
-DROP PROCEDURE IF EXISTS getAllEmployees $$
-CREATE PROCEDURE getAllEmployees ()
+DROP PROCEDURE IF EXISTS get_all_employees_details $$
+CREATE PROCEDURE get_all_employees_details ()
 BEGIN
 	SELECT 
 		epd.payroll_id, epd.employee_id, epd.commision_percentage, epd.gets_blind_allowance, epd.nic, 
@@ -22,14 +22,6 @@ BEGIN
 	INNER JOIN  
         employment_type et
 	ON
-		epd.employee_id = et.employee_id;
-        
-        /*
-	SELECT 
-		e.first_name, e.last_name, hr.ni_number 
-	FROM 
-		employee e 
-		INNER JOIN 	
-			employee_hr hr ON e.id = hr.employee_id;*/
+		epd.employee_id = et.employee_id;        
 END$$
 DELIMITER ;
