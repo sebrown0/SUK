@@ -1,14 +1,10 @@
--- Get the AEOs from the Payroll Data tables and join on AEO Type and AEO.
-DELIMITER $$
-USE salaroo_uk $$
-DROP PROCEDURE IF EXISTS get_payroll_aeo $$
-CREATE PROCEDURE get_payroll_aeo (
+CREATE PROCEDURE `get_payroll_aeo` (
 	IN taxYear VARCHAR(4),
     IN payFrequency VARCHAR(2),
     IN payrollNum INT,
     IN empPayrollId VARCHAR(45))
-BEGIN	
-	DECLARE freqId INT;
+BEGIN
+DECLARE freqId INT;
     SET freqId = getFrequencyId(payFrequency, taxYear);
 	SELECT 
 		pd.employee_payroll_id, 
@@ -28,6 +24,5 @@ BEGIN
 	AND 
 		pr.payroll_frequency_id = freqId
 	AND
-		pd.employee_payroll_id = empPayrollId;	 
-END $$
-DELIMITER ;
+		pd.employee_payroll_id = empPayrollId;	
+END

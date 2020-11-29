@@ -1,13 +1,10 @@
 -- Insert data into the Payroll Data tables.
-DELIMITER $$
-USE salaroo_uk $$
-DROP PROCEDURE IF EXISTS create_payroll_data $$
-CREATE PROCEDURE create_payroll_data (
+CREATE PROCEDURE `create_payroll_data` (
 	IN taxYear VARCHAR(4),
     IN payFrequencyId VARCHAR(2),
     IN testNum INT)
-BEGIN	
-	DECLARE freqId INT;
+BEGIN
+DECLARE freqId INT;
     DECLARE thisPayrollNumber INT;
     DECLARE payrollDateFrom DATE;
     DECLARE payrollDateTo DATE;
@@ -70,6 +67,4 @@ BEGIN
 	-- PTRANS
 	-- Update payroll_frequency
 	UPDATE payroll_frequency SET last_payroll_run_number = thisPayrollNumber WHERE id = freqId;
-     
-END $$
-DELIMITER ;
+END

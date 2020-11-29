@@ -1,12 +1,9 @@
--- Get employees for a pay frequency 
-DELIMITER $$
-USE salaroo_uk $$
-DROP PROCEDURE IF EXISTS get_included_employees $$
-CREATE PROCEDURE get_included_employees (
-	IN taxYear VARCHAR(4), -- not sure why this is here?
+-- Get employees with the pay frequency
+CREATE PROCEDURE `get_included_employees` (
+	IN taxYear VARCHAR(4),
     IN freq VARCHAR(2))
-BEGIN	    
-	SELECT 
+BEGIN
+SELECT 
 		epd.payroll_id, epd.employee_id, epd.commision_percentage, epd.gets_blind_allowance, epd.nic, 
         epd.pay_frequency, epd.rate_of_pay, epd.tax_rate, epd.tax_code, epd.avg_hours_per_week,
         e.date_of_birth, e.employer_id, e.first_name, e.gender, e.last_name,
@@ -27,6 +24,5 @@ BEGIN
 	ON
 		epd.employee_id = et.employee_id
 	WHERE 
-		epd.pay_frequency = freq;    
-END $$
-DELIMITER ;
+		epd.pay_frequency = freq; 
+END

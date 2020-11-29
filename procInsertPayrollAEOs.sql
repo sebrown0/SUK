@@ -1,10 +1,7 @@
 -- ADD THE EMPLOYEE'S AEO(S)
-DELIMITER $$
-USE salaroo_uk $$
-DROP PROCEDURE IF EXISTS `insert_payroll_aeos` $$
-CREATE PROCEDURE `insert_payroll_aeos`(IN payRunId INT)
+CREATE PROCEDURE `insert_payroll_aeos` (IN payRunId INT)
 BEGIN
-	DECLARE numAEOsForEmp INT;
+DECLARE numAEOsForEmp INT;
     DECLARE totalNumAEOs INT;
     DECLARE payrollDataId INT;
     DECLARE idx INT;    
@@ -31,6 +28,5 @@ BEGIN
         SELECT id INTO payrollDataId FROM payroll_data  WHERE employee_payroll_id = empPayrollId AND payroll_run_id = payRunId;                
 		INSERT INTO payroll_aeo (`payroll_data_id`, `employee_aeo_id`) VALUES (payrollDataId, employeeAeoId);
         SET idx = idx + 1;
-	END WHILE;            
-END$$
-DELIMITER ;
+	END WHILE;   
+END

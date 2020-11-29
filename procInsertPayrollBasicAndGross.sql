@@ -1,10 +1,7 @@
--- CREATE A PAYROLL BASIC AND GROSS FOR EACH EMPLOYEE IN THE PAYROLL
-DELIMITER $$
-USE salaroo_uk $$
-DROP PROCEDURE IF EXISTS `insert_payroll_basic_and_gross` $$
-CREATE PROCEDURE `insert_payroll_basic_and_gross`(IN payRunId INT)
+-- CREATE A PAYROLL DATA ENTRY FOR EACH EMPLOYEE IN THE PAYROLL
+CREATE PROCEDURE `insert_payroll_basic_and_gross` (IN payRunId INT)
 BEGIN
-	DECLARE numEmps INT;
+DECLARE numEmps INT;
     DECLARE idx INT;
     DECLARE empPayrollId VARCHAR(45);
     DECLARE payrollDataId INT;
@@ -52,6 +49,5 @@ BEGIN
         SET totalGross = basicTotal + commisionGross + bonusGross + overtimeTotalGross;
         INSERT INTO `payroll_gross` (`payroll_data_id`, `commision`, `total_gross`, `bonus`, `overtime`) VALUES (payrollDataId, commisionGross, totalGross, bonusGross, overtimeTotalGross);
         SET idx = idx + 1;
-	END WHILE;    
-END$$
-DELIMITER ;
+	END WHILE;   
+END

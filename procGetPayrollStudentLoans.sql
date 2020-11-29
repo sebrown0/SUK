@@ -1,14 +1,10 @@
--- Get the Student Loans from the Payroll Data tables.
-DELIMITER $$
-USE salaroo_uk $$
-DROP PROCEDURE IF EXISTS get_payroll_student_loans$$
-CREATE PROCEDURE get_payroll_student_loans (
+CREATE PROCEDURE `get_payroll_student_loans` (
 	IN taxYear VARCHAR(4),
     IN payFrequency VARCHAR(3),
     IN payrollNum INT,
     IN empPayrollId VARCHAR(45))
-BEGIN	
-	DECLARE freqId INT;
+BEGIN
+DECLARE freqId INT;
     SET freqId = getFrequencyId(payFrequency, taxYear);
 	SELECT 
 		pd.employee_payroll_id, pd.payroll_run_id, 		
@@ -26,6 +22,5 @@ BEGIN
 	AND 
 		pr.payroll_frequency_id = freqId
 	AND
-		pd.employee_payroll_id = empPayrollId;	   	
-END $$
-DELIMITER ;
+		pd.employee_payroll_id = empPayrollId;	
+END

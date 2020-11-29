@@ -1,7 +1,4 @@
-DELIMITER $$
-USE salaroo_uk $$
-DROP PROCEDURE IF EXISTS get_all_employees_and_loans $$
-CREATE PROCEDURE get_all_employees_and_loans ()
+CREATE PROCEDURE `get_all_employees_and_loans` ()
 BEGIN
 	SELECT 		
         e.id as emp_id, e.first_name, e.last_name, 
@@ -18,6 +15,4 @@ BEGIN
 		ON
 			e.id = sl.employee_id
 	ORDER BY sl.employee_id;
-       
-END$$
-DELIMITER ;
+END

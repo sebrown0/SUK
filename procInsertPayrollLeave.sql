@@ -1,10 +1,7 @@
 -- CREATE A PAYROLL LEAVE ENTRY FOR EACH EMPLOYEE INCLUDED IN THE PAYROLL
-DELIMITER $$
-USE salaroo_uk $$
-DROP PROCEDURE IF EXISTS `insert_payroll_leave` $$
 CREATE PROCEDURE `insert_payroll_leave`(IN payRunId INT)
 BEGIN
-	DECLARE numEmps INT;
+DECLARE numEmps INT;
     DECLARE idx INT;
     DECLARE leaveTypeId INT;
     DECLARE includedDays INT;
@@ -25,6 +22,5 @@ BEGIN
 			(payrollDataId, empPayrollId, leaveTypeId, includedDays);        	
         
         SET idx = idx + 1;
-	END WHILE;                
-END$$
-DELIMITER ;
+	END WHILE;         
+END
