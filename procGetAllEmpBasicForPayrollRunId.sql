@@ -17,6 +17,6 @@ BEGIN
 		pd.payroll_run_id = payrollRun; 
         
 	IF returnRs = TRUE THEN
-		SELECT * FROM all_emp_basic_for_payroll_run_id;
+		SELECT * FROM get_all_emp_basic_for_payroll_run_id;
 	END IF;
 END
