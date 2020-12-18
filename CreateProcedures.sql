@@ -146,16 +146,40 @@ BEGIN
         A = Value = 1        
         D = daily = 2
     */
-    DELETE FROM employee_aeo WHERE id !='';
+    DELETE FROM aeo_type WHERE id !='';    
     INSERT INTO 
-		`salaroo_uk`.`employee_aeo` 
-        (`employee_id`, `date_added_to_payroll`, `is_priority`, `priority`, `status`, `frequency`, `type`, `agency`, 
-        `ytd`, `start_date`, `original_amount`, `current_amount`, `cumulative_amount`, `order_date`, `apply_from`, 
-        `stop_order`, `ref_number`, `description`, `pe_type`, `pe_amount`, `is_unpaid_bf`, `deduction_type`, `deduction_amount`) 
+		`salaroo_uk`.`aeo_type` (
+        `id`, `description`, `deduction_type`, `pe_type`, `is_unpaid_bf`,  `is_priority`) 
 	VALUES 
-		('LS1', '2020-01-01', 1, 1, 0, 0, 'DEO', 'CSA', 0, '2020-01-01', 1000, 1000, 0, '2020-01-01', '2020-01-01', 0, 'REF-1234', '', 'A', 0, 0, 'V', 123),
-        ('LS1', '2020-01-01', 1, 1, 0, 0, 'CTAEO', 'Springfield City Council', 0, '2020-01-01', 10000, 10000, 0, '2020-01-01', '2020-01-01', 0, 'REF-412', '', 'N', 5000, 0, 'T',3123);	
-		
+		(1, 'Department Work Pensions', 'T', 'P', 1,  0),
+        (2, 'Child Support', 'V', 'A', 1,  1),
+        (3, 'Council Tax Attachment of Earnings Order', 'T', 'N', 0,  1),
+        (4, 'Current Maintenance Agreement', 'D', 'D', 0,  1),
+        (5, 'Magistrates Court Attachment of Earnings Order', 'T', 'N', 0,  1);
+    
+    DELETE FROM aeo_agency WHERE id !='';    
+    INSERT INTO 
+		`salaroo_uk`.`aeo_agency` (
+		`id`, `aeo_type_id`, `agency_name`) 
+	VALUES 
+		(1, 1, 'Department Work Pensions'),
+        (2, 2, 'CSA'),
+        (3, 3, 'Bristol City Council'),
+        (4, 3, 'Springfield City Council'),
+        (5, 5, 'Springfield Crown Court');
+       
+    DELETE FROM employee_aeo WHERE id !='';    
+    INSERT INTO 
+		`salaroo_uk`.`employee_aeo` (
+		`employee_id`, `aeo_type_id`, `aeo_agency_id`, 
+        `date_added_to_payroll`, `priority`, `status`, `frequency`, 
+        `ytd`, `start_date`, `original_amount`, `current_amount`, `cumulative_unpaid`, `order_date`, `apply_from`, 
+        `stop_order`, `ref_number`, `court_case_number`, `description`, `deduct_admin_charge`, `deduction_amount`, `pe_amount`)
+	VALUES 
+		('LS1', 2, 2, '2020-01-01', 1, 1, 0, 0, '2020-01-01', 1000, 1000, 0, '2020-01-01', '2020-01-01', 0, 'REF-1234', 'CC NUM CSA-18291', 'Child support for LS', 1, 123, 2500),
+        ('LS1', 3, 4, '2020-01-01', 2, 1, 0, 0, '2020-01-01', 10000, 10000, 0, '2020-01-01', '2020-01-01', 0, 'REF-412', 'CC NUM SCC-12191', 'Council Tax arrears for LS', 0, 3123, 0);	
+    
+    		
 	/*Student Loan*/
     SET loan_start = date(concat(year(date_sub(concat(employer_tax_year,'-01-01'), INTERVAL 1 YEAR)),'-01-01'));
 	DELETE FROM student_loan WHERE id !='';
