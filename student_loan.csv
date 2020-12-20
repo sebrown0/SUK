@@ -1,0 +1,7 @@
+id,employee_id,start_date,original_amount,loan_type,current_amount,reason_for_deduction,stop_notice_received
+1,LS1,2020-01-01,1000.00,1,1000.00,ER,0
+2,LS1,2020-01-01,4000.00,2,4000.00,P45,0
+3,LS1,2020-01-01,3000.00,3,3000.00,GR,0
+4,MS1,2020-01-01,1230.00,1,1230.00,SR,0
+5,MS1,2020-01-01,4320.00,2,4320.00,SC,0
+6,MS1,2020-01-01,1983.00,3,1983.00,ER,0

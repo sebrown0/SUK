@@ -1,0 +1,5 @@
+id,leave_name,max_days,tax_year_id
+1,"Annual Leave",27,2021
+2,"Sick Leave",21,2021
+3,"Maternity Leave",30,2021
+4,"Paternity Leave",30,2021

@@ -1,0 +1,11 @@
+id,primary_employment,is_apprentice,is_casual_worker,employee_type,employee_id
+1,1,0,0,S,MS1
+2,1,1,0,V,BS1
+3,0,0,0,S,LS1
+4,1,0,0,S,TR1
+5,1,0,0,S,CE1
+6,1,0,0,S,BM1
+7,1,0,0,P,QE2
+8,1,0,0,S,HS1
+9,0,0,0,S,MAS1
+10,1,0,0,S,SW1

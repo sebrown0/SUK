@@ -1,0 +1,6 @@
+id,description,pe_type,is_unpaid_bf,deduction_type,is_priority
+1,"Department Work Pensions",P,1,T,0
+2,"Child Support",A,1,V,1
+3,"Council Tax Attachment of Earnings Order",N,0,T,1
+4,"Current Maintenance Agreement",D,0,D,1
+5,"Magistrates Court Attachment of Earnings Order",N,0,T,1

@@ -1,0 +1,11 @@
+id,number_or_name,street,district,city,post_code,country,last_updated,employee_id
+1,742,"Evergreen Terrace",,Springfied,OH123,England,"2020-12-20 11:02:58",MS1
+2,742,"Evergreen Terrace",,Springfied,OH123,England,"2020-12-20 11:02:58",BS1
+3,742,"Evergreen Terrace",,Springfied,OH123,England,"2020-12-20 11:02:58",LS1
+4,12,"Rocky Ave","Ashton Vale",Bristol,"BS3 7PQ",England,"2020-12-20 11:02:58",TR1
+5,99,"Make My Day St",Horfield,Newcastle,"HR12 3PA",England,"2020-12-20 11:02:58",CE1
+6,"Wayne Manor","1 Bat Cave Ave",,Gotham,GT123,England,"2020-12-20 11:02:58",BM1
+7,"Buck House",Strand,Westminster,London,"SW1A 1AA",England,"2020-12-20 11:02:58",QE2
+8,742,"Evergreen Terrace",,Springfied,OH123,England,"2020-12-20 11:02:58",HS1
+9,742,"Evergreen Terrace",,Springfied,OH123,England,"2020-12-20 11:02:58",MAS1
+10,4,"Blues Rd",Motown,Detroit,MT321,England,"2020-12-20 11:02:58",SW1

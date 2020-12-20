@@ -1,0 +1,11 @@
+id,first_name,middle_name,last_name,gender,date_of_birth,initials,employer_id
+BM1,Bat,NULL,Man,M,1980-06-15,BM,DAK1
+BS1,Bart,NULL,Simpson,M,1996-12-25,BS,DAK1
+CE1,Clint,NULL,Eastwood,M,1950-03-22,CE,DAK1
+HS1,Homer,NULL,Simpson,M,1980-04-01,HS,DAK1
+LS1,Lisa,NULL,Simpson,F,1995-06-12,LS,DAK1
+MAS1,Maggie,NULL,Simpson,F,1998-05-06,MAS,DAK1
+MS1,Marge,NULL,Simpson,F,1985-05-12,MS,DAK1
+QE2,"Queen Liz",NULL,"The II",F,1920-09-27,QE,DAK1
+SW1,Stevie,NULL,Wonder,M,1970-01-01,SW,DAK1
+TR1,The,NULL,Rock,M,1980-01-01,TR,DAK1
