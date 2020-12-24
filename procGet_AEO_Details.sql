@@ -8,7 +8,7 @@ BEGIN
         emp_aeo.apply_from, emp_aeo.stop_order, emp_aeo.ref_number, emp_aeo.court_case_number, 
         emp_aeo.description, emp_aeo.deduct_admin_charge, emp_aeo.deduction_amount, emp_aeo.pe_amount, 
         agency.id as agency_id, agency.aeo_type_id, agency.agency_name, 
-        tpe.id as type_id, tpe.description, tpe.pe_type, tpe.is_unpaid_bf, tpe.deduction_type, tpe.is_priority
+        tpe.id AS type_id, tpe.description AS type_description, tpe.pe_type, tpe.is_unpaid_bf, tpe.deduction_type, tpe.is_priority
 	FROM 
 		salaroo_uk.employee_aeo emp_aeo
 		INNER JOIN aeo_agency agency ON emp_aeo.aeo_agency_id = agency.id
