@@ -30,6 +30,33 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
+TRUNCATE test_data_ytd;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\test_data\\test_data_ytd.csv'
+INTO TABLE test_data_ytd 
+CHARACTER SET latin1
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+TRUNCATE test_result_expected;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\test_data\\test_result_expected.csv'
+INTO TABLE test_result_expected 
+CHARACTER SET latin1
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+TRUNCATE test_group;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\test_data\\test_group.csv'
+INTO TABLE test_group 
+CHARACTER SET latin1
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
 TRUNCATE test;
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\test_data\\test.csv'
 INTO TABLE test 
