@@ -1,2 +1,4 @@
-test_num,test_group,description,emp_test_payroll_id,salary_test_num,aeo_test_num,loan_test_num,ytd_test_num,pension_test_num
-1,0,A simple test with just salary data #1,NI123456D,1,0,0,0,0
+test_num,test_group,description,payroll_params_test_num,salary_test_num,aeo_test_num,student_loan_test_num,ytd_test_num,pension_test_num
+1,0,A simple test with just salary data #1. Use for 'testing' the tests.,1,1,0,0,0,0
+2,0,A test with all data except pension. Use for 'testing' the tests.,1,1,1,1,1,0
+3,1,A group test. All fields should be zero. Use for 'testing' the tests.,1,0,0,0,0,0
