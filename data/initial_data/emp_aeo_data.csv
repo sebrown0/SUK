@@ -1,3 +1,3 @@
 id,employee_id,aeo_type_id,aeo_agency_id,date_added_to_payroll,priority,status,frequency,start_date,original_amount,current_amount,amount_paid_in_previous_employment,cumulative_unpaid,order_date,apply_from,stop_order,ref_number,court_case_number,description,deduct_admin_charge,deduction_amount,pe_amount,uses_dea_higher_rate
-1,LS1,2,2,01/01/2020,1,1,0,01/01/2020,1000,1000,0,0,01/01/2020,01/01/2020,0,REF-1234,CC NUM CSA-18291,Child support for LS,1,123,2500,0
-2,LS1,3,4,01/01/2020,2,1,0,01/01/2020,10000,10000,0,0,01/01/2020,01/01/2020,0,REF-412,CC NUM SCC-12191,Council Tax arrears for LS,0,3123,0,0
+1,LS1,2,2,2020-01-01,1,1,0,2020-01-01,1000,1000,0,0,2020-01-01,2020-01-01,0,REF-1234,CC NUM CSA-18291,Child support for LS,1,123,2500,0
+2,LS1,3,4,2020-01-01,2,1,0,2020-01-01,10000,10000,0,0,2020-01-01,2020-01-01,0,REF-412,CC NUM SCC-12191,Council Tax arrears for LS,0,3123,0,0
