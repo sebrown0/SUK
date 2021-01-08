@@ -102,7 +102,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 DELETE FROM employee_aeo WHERE id <> '';
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\AEO_Test_Data.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\emp_aeo_data.csv'
 INTO TABLE employee_aeo 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'

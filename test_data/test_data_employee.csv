@@ -1,2 +1,2 @@
-payroll_id,emp_id,first_name,last_name,employee_type,pay_frequency,gender,date_of_birth,gets_blind_allowance,martial_status,employee_hours_code,avg_hours_per_week,employer_id
-NI123456D,LS1,Lisa,Simpson,S,M1,F,1990-01-01,0,S,D,40,DAK1
+payroll_id,emp_id,first_name,last_name,employee_type,pay_frequency,gender,date_of_birth,start_date,gets_blind_allowance,martial_status,employee_hours_code,avg_hours_per_week,employer_id
+NI123456D,LS1,Lisa,Simpson,S,M1,F,1990-01-01,2020-01-01,0,S,D,40,DAK1
