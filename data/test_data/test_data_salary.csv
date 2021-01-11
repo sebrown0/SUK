@@ -1,4 +1,5 @@
 salary_test_num,description,tax_code,tax_rate,nic,basic_amount,basic_hours,basic_rate,basic_units,overtime_15,bonus,commission,expenses,salary_sacrifice_total,pension_total,annual_leave_for_period,annual_leave_for_ytd,mat_leave_for_period,mat_leave_for_ytd,pat_leave_for_period,pat_leave_for_ytd,sick_leave_for_period,sick_leave_for_ytd
+-1,Dummy row for when data from salary is not included in a test,0,0,N,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 1,Standard rate tax code for RUK. Basic 1000 and no leave,1250L,40,A,1000,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 2,Standard rate tax code for RUK. Basic 5000 Gross 5680 and no leave,1250L,40,A,5000,40,0,1,0,500,180,0,0,0,0,0,0,0,0,0,0,0
 3,"Basic Rate tax for RUK. Basic/Gross 5000, ML 30 days",BR,40,A,5000,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0

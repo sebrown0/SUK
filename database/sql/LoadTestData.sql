@@ -39,15 +39,6 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-TRUNCATE test_result_expected;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\test_result_expected.csv'
-INTO TABLE test_result_expected 
-CHARACTER SET latin1
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
 TRUNCATE test_group;
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\test_group.csv'
 INTO TABLE test_group 
@@ -66,6 +57,15 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
+TRUNCATE test_data_pension;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\test_data_pension.csv'
+INTO TABLE test_data_pension 
+CHARACTER SET latin1
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
 TRUNCATE test_data_payroll_params;
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\test_data_payroll_params.csv'
 INTO TABLE test_data_payroll_params 
@@ -75,7 +75,13 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-TRUNCATE test;
+-- Turn the FK checks back on because the test data for a test (below) has to exist.
+-- If test data for a category is not included in a test we load the dummy row with id = -1.
+SET foreign_key_checks = 1;
+
+-- Have to delete the data in test_result_expected because it has FK to test.
+TRUNCATE test_result_expected;
+DELETE FROM test WHERE test_num <> "";
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\test.csv'
 INTO TABLE test 
 CHARACTER SET latin1
@@ -84,5 +90,11 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\test_result_expected.csv'
+INTO TABLE test_result_expected 
+CHARACTER SET latin1
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
 
-SET foreign_key_checks = 0;

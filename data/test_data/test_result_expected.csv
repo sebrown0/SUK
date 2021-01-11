@@ -1,2 +1,2 @@
 expected_test_num,description,gross,net,tax,employee_ni,employer_ni,employee_pension,salary_sacrifice,employer_pension,loan_1_deduction,loan_2_deduction,loan_3_deduction,total_loan_deduction,aeo_1_deduction,aeo_2_deduction,aeo_3_deduction,total_aeo_deduction,aeo_1_pe_bf,aeo_2_pe_bf,aeo_3_pe_bf,aeo_1_ded_bf,aeo_2_ded_bf,aeo_3_ded_bf,aeo_1_admin_charge,aeo_2_admin_charge,aeo_3_admin_charge,employee_ni_ytd,gross_ytd,pension_ytd,tax_ytd,net_ytd,salary_sacrifice_ytd,loan_1_ytd,loan_2_ytd,loan_3_ytd,aeo_1_ytd,aeo_2_ytd,aeo_3_ytd
-2,NONE,1000,956,0,24.96,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+4,NONE,1000,874.04,0,24.96,36.98,0,0,0,0,0,0,0,100,0,0,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

@@ -1,4 +1,5 @@
-test_num,test_group,description,payroll_params_test_num,salary_test_num,aeo_test_num,student_loan_test_num,ytd_test_num,pension_test_num
-1,0,A simple test with just salary data #1. Use for 'testing' the tests.,1,1,0,0,0,0
-2,0,A test with all data except pension. Use for 'testing' the tests.,1,1,1,1,1,0
-3,1,A group test. All fields should be zero. Use for 'testing' the tests.,1,0,0,0,0,0
+test_num,test_group,category,description,payroll_params_test_num,salary_test_num,aeo_test_num,student_loan_test_num,ytd_test_num,pension_test_num
+1,-1,Test,A simple test with just salary data #1. Use for 'testing' the tests.,1,1,-1,-1,1,-1
+2,-1,Test,A test with all data except pension. Use for 'testing' the tests.,1,1,1,1,1,-1
+3,1,Test,A group test. All fields should be zero. Use for 'testing' the tests.,1,-1,-1,-1,1,-1
+4,-1,AEO - DEO,Deduct all for a DEA.,1,1,1,-1,1,-1
