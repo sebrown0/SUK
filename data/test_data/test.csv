@@ -2,4 +2,16 @@ test_num,test_group,category,description,payroll_params_test_num,salary_test_num
 1,-1,Test,A simple test with just salary data #1. Use for 'testing' the tests.,1,1,-1,-1,1,-1
 2,-1,Test,A test with all data except pension. Use for 'testing' the tests.,1,1,1,1,1,-1
 3,1,Test,A group test. All fields should be zero. Use for 'testing' the tests.,1,-1,-1,-1,1,-1
-4,-1,AEO - DEO,Deduct all for a DEA.,1,1,1,-1,1,-1
+4,-1,AEO - DEO,Deduct all for a DEO.,1,1,1,-1,1,-1
+5,-1,AEO - DEO,Deduct part for a DEO. The PE amount prevents a full deduction.,1,1,2,-1,1,-1
+6,-1,AEO - DEO,Deduct nothing for a DEO. The PE amount prevents any deduction.,1,1,3,-1,1,-1
+7,-1,AEO - DEO,Deduct nothing for a DEO. The PE amount prevents any deduction. CF the PE because the order is pre march 2003.,1,1,4,-1,1,-1
+8,-1,AEO - DEO,Deduct part for a DEO. The PE amount prevents a full deduction. Has unpaid BF = £100 so this should be added to the overall deduction.,1,1,5,-1,1,-1
+9,-1,AEO - DEA,Deduct all for a DEA. Uses the lower rate table.,1,1,6,-1,1,-1
+10,-1,AEO - DEA,Deduct all for a DEA. Uses the higher rate table.,1,1,7,-1,1,-1
+11,-1,AEO - DEA,Deduct all for a DEA. Uses the higher rate table. Carries forward some deduction because PE is too high.,1,1,8,-1,1,-1
+12,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 3 - post april 2007,1,1,9,-1,1,-1
+13,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 2 - 1 October 1998 and 31 March 2007,1,12,10,-1,1,-1
+14,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 1 - pre October 1998,1,12,11,-1,1,-1
+15,-1,AEO - CTAEO,Deduct nothing for a CTAEO because there are no earnings,1,18,11,-1,1,-1
+16,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 1 - pre October 1998. Use the 50% rule because the salary is high enough.,1,4,11,-1,1,-1

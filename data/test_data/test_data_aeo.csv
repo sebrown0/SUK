@@ -1,8 +1,13 @@
-aeo_test_num,aeo_rec_num,description,is_priority,priority,deduction_amount,deduction_type,unpaid_bf,cumulative_unpaid,pe_type,pe_amount,deduct_admin_charge,aeo_type_description,order_date,pe_amount_carried_forward,ytd,uses_dea_higher_rate
--1,-1,Dummy row for when AEO data is not included in a test.,0,0,0,V,0,0,A,0,0,None,2020-01-01,0,0,0
-1,1,CSA :- Ded Type = [V]ALUE. PE = [A]MOUNT. Ded Admin = True. Action = Deduct all.,1,1,100,V,1,0,A,50,1,Child Support,2020-01-01,0,0,0
-2,1,CSA :- Ded Type = [V]ALUE. PE = [A]MOUNT. Ded Admin = True. Action = Deduct all.,1,1,100,V,1,0,A,1500,1,Child Support,2020-01-01,0,0,0
-3,1,CSA :- Ded Type = [V]ALUE. PE = [A]MOUNT. Ded Admin = True. Action = Deduct all.,1,1,100,V,1,0,A,1500,1,Child Support,2020-01-01,0,0,0
-4,1,CSA :- Ded Type = [V]ALUE. PE = [A]MOUNT. Ded Admin = True.,1,1,100,V,1,0,A,1500,1,Child Support,2020-01-01,0,0,0
-4,2,Council Tax (CTAEO). Deduction = TABLE. PE = AMOUNT. Ded Admin = True. Nothing CF.,1,2,200,T,0,0,N,0,0,Council Tax Attachment of Earnings Order,2020-10-01,0,0,0
-4,3,DWP. Deduction = TABLE. PE = PCENTAGE. Ded Admin = True. Unpaid is CF. ,0,3,50,T,1,0,P,60,0,Department Work Pensions,2019-10-01,0,0,1
+aeo_test_num,aeo_rec_num,description,is_priority,priority,deduction_amount,deduction_type,unpaid_bf,cumulative_unpaid,pe_type,pe_amount,pe_amount_brought_forward,deduct_admin_charge,aeo_type_description,order_date,ytd,uses_dea_higher_rate
+-1,-1,Dummy row for when AEO data is not included in a test.,0,0,0,V,0,0,A,0,0,0,None,2020-01-01,0,0
+1,1,CSA :- Ded Type = [V]ALUE. PE = [A]MOUNT. Ded Admin = True. Action = Deduct all.,1,1,100,V,1,0,A,50,0,1,Child Support,2020-01-01,0,0
+2,1,CSA :- Ded Type = [V]ALUE. PE = [A]MOUNT. Ded Admin = True. Action = Deduct part.,1,1,100,V,1,0,A,900,0,1,Child Support,2020-01-01,0,0
+3,1,CSA :- Ded Type = [V]ALUE. PE = [A]MOUNT. Ded Admin = True. Action = Deduct none.,1,1,100,V,1,0,A,1500,0,1,Child Support,2020-01-01,0,0
+4,1,CSA :- Ded Type = [V]ALUE. PE = [A]MOUNT. Ded Admin = True. Action = Deduct none. Carry Fwd PE.,1,1,100,V,1,0,A,1500,0,1,Child Support,1999-01-01,0,0
+5,1,CSA :- Ded Type = [V]ALUE. PE = [A]MOUNT. Ded Admin = True. Action = Deduct none. Has CFwd PE = 24.96.,1,1,100,V,1,100,A,800,24.96,1,Child Support,2020-01-01,0,0
+6,1,DWP. Deduction = TABLE. PE = PCENTAGE. Ded Admin = True. Unpaid is CF. Uses lower rate table.,0,3,0,T,1,0,P,60,0,0,Department Work Pensions,2019-10-01,0,0
+7,1,DWP. Deduction = TABLE. PE = PCENTAGE. Ded Admin = True. Unpaid is CF.  Uses higher rate table.,0,3,0,T,1,0,P,60,0,0,Department Work Pensions,2019-10-01,0,1
+8,1,DWP. Deduction = TABLE. PE = PCENTAGE. Ded Admin = True. Unpaid is CF.Set PE rate to 90% so that CF Some ded,0,4,0,T,1,0,P,90,0,0,Department Work Pensions,2019-10-01,0,1
+9,1,Council Tax (CTAEO). Deduction = TABLE. PE = AMOUNT. Ded Admin = True. Use post April 2007 table 3.,1,2,0,T,0,0,N,0,0,0,Council Tax Attachment of Earnings Order,2020-10-01,0,0
+10,1,Council Tax (CTAEO). Deduction = TABLE. PE = AMOUNT. Ded Admin = True. Use pre April 2007 table 2.,1,2,0,T,0,0,N,0,0,0,Council Tax Attachment of Earnings Order,2006-10-01,0,0
+11,1,Council Tax (CTAEO). Deduction = TABLE. PE = AMOUNT. Ded Admin = True. Use pre Oct 1 1998 table 1.,1,2,0,T,0,0,N,0,0,0,Council Tax Attachment of Earnings Order,1997-10-01,0,0

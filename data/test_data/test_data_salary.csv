@@ -16,3 +16,5 @@ salary_test_num,description,tax_code,tax_rate,nic,basic_amount,basic_hours,basic
 14,Basic Rate tax for RUK.  Basic 10/hr. 20 Hrs worked. 10 hrs OT,BR,40,A,200,20,10,20,10,0,0,0,0,0,0,0,0,0,0,0,0,0
 15,Month 1 tax code. 2000 Basic,1250M1,40,A,2000,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 16,K code. 1700 basic,K100,40,A,1700,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+17,Standard rate tax code for RUK. Basic 500. Has low basic so that it can be used with AEOs for Pes,1250L,40,A,50,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+18,Standard rate tax code for RUK. No Basic and no leave,1250L,40,A,0,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0

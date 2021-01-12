@@ -1,2 +1,14 @@
-expected_test_num,description,gross,net,tax,employee_ni,employer_ni,employee_pension,salary_sacrifice,employer_pension,loan_1_deduction,loan_2_deduction,loan_3_deduction,total_loan_deduction,aeo_1_deduction,aeo_2_deduction,aeo_3_deduction,total_aeo_deduction,aeo_1_pe_bf,aeo_2_pe_bf,aeo_3_pe_bf,aeo_1_ded_bf,aeo_2_ded_bf,aeo_3_ded_bf,aeo_1_admin_charge,aeo_2_admin_charge,aeo_3_admin_charge,employee_ni_ytd,gross_ytd,pension_ytd,tax_ytd,net_ytd,salary_sacrifice_ytd,loan_1_ytd,loan_2_ytd,loan_3_ytd,aeo_1_ytd,aeo_2_ytd,aeo_3_ytd
-4,NONE,1000,874.04,0,24.96,36.98,0,0,0,0,0,0,0,100,0,0,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+expected_test_num,description,gross,net,tax,employee_ni,employer_ni,employee_pension,salary_sacrifice,employer_pension,loan_1_deduction,loan_2_deduction,loan_3_deduction,total_loan_deduction,aeo_1_deduction,aeo_2_deduction,aeo_3_deduction,total_aeo_deduction,aeo_1_pe_cf,aeo_2_pe_cf,aeo_3_pe_cf,aeo_1_ded_cf,aeo_2_ded_cf,aeo_3_ded_cf,aeo_1_admin_charge,aeo_2_admin_charge,aeo_3_admin_charge,employee_ni_ytd,gross_ytd,pension_ytd,tax_ytd,net_ytd,salary_sacrifice_ytd,loan_1_ytd,loan_2_ytd,loan_3_ytd,aeo_1_ytd,aeo_2_ytd,aeo_3_ytd
+4,NONE,1000,874.04,0,24.96,36.98,0,0,0,0,0,0,0,100,0,0,100,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+5,NONE,1000,899,0,24.96,36.98,0,0,0,0,0,0,0,75.04,0,0,75.04,0,0,0,24.96,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+6,NONE,1000,975.04,0,24.96,36.98,0,0,0,0,0,0,0,0,0,0,0,0,0,0,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+7,NONE,1000,975.04,0,24.96,36.98,0,0,0,0,0,0,0,0,0,0,0,524.96,0,0,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+8,NONE,1000,823.96,0,24.96,36.98,0,0,0,0,0,0,0,150.08,0,0,150.08,0,0,0,49.92,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+9,NONE,1000,906.78,0,24.96,36.98,0,0,0,0,0,0,0,68.25,0,0,68.25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+10,NONE,1000,838.53,0,24.96,36.98,0,0,0,0,0,0,0,136.5,0,0,136.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+11,NONE,1000,877.53,0,24.96,36.98,0,0,0,0,0,0,0,97.5,0,0,97.5,0,0,0,39,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+12,NONE,1000,858.03,0,24.96,36.98,0,0,0,0,0,0,0,117,0,0,117,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+13,NONE,400,388,0,0,0,0,0,0,0,0,0,0,12,0,0,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+14,NONE,400,372,0,0,0,0,0,0,0,0,0,0,28,0,0,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+15,NONE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+16,NONE,5000,1594.17,2050,421.66,588.98,0,0,0,0,0,0,0,934.17,0,0,934.17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
