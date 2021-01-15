@@ -18,4 +18,3 @@ CALL load_salary_data('NI123456H', 1,0,0,0);
 CALL load_salary_data('NI123456I', 1,0,0,0); 
 CALL load_salary_data('NI123456J', 1,0,20,10); 
 
-

@@ -20,7 +20,7 @@ BEGIN
 		aeo_ded.payroll_result_deduction_payroll_run_tax_year_id AS res_ded_pay_tax_yr, 
 		aeo_ded.payroll_result_deduction_payroll_run_payroll_frequency_id AS res_ded_pay_freq, 
 		aeo_ded.amount_deducted, aeo_ded.amount_carried_forward, aeo_ded.pe_amount_carried_forward,
-		aeo_ded.cumulative_carried_forward, aeo_ded.this_deduction_type, aeo_ded.ytd
+		aeo_ded.cumulative_carried_forward, aeo_ded.deduction_status, aeo_ded.ytd
 	FROM payroll_data pay_data 
 		INNER JOIN payroll_aeo pay_aeo ON pay_aeo.payroll_data_id = pay_data.id
 			INNER JOIN employee_aeo emp_aeo ON emp_aeo.id = pay_aeo.employee_aeo_id

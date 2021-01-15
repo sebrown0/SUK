@@ -29,7 +29,16 @@ BEGIN
 		);
         
 	-- 'Return the payroll run id and payroll num from the new payroll run.
-    SELECT MAX(id), payroll_number INTO payrollRunId, payrollNum 
-    FROM payroll_run WHERE payroll_frequency_id = freqId
-    GROUP BY payroll_frequency_id, payrollNum; 
+    SELECT 
+		id, payroll_number 
+	INTO 
+		payrollRunId, payrollNum 
+    FROM
+		payroll_run 
+	WHERE 
+		id = (
+			SELECT MAX(id) FROM payroll_run 
+            WHERE payroll_frequency_id = freqId AND tax_year_id = taxYear 
+            GROUP BY payroll_frequency_id, tax_year_id
+            );
 END

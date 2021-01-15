@@ -10,13 +10,15 @@ SELECT * FROM payroll_student_loan;
 SELECT * FROM employee_payroll_result;
 SELECT * FROM payroll_result_deduction;
 SELECT * FROM student_loan_deduction;
+SELECT * FROM payroll_payment_ytd;
 
--- from code
-select payroll_result_deduction_id,employee_aeo_id,employee_aeo_employee_id,payroll_result_deduction_payroll_run_id,
-payroll_result_deduction_payroll_run_tax_year_id,payroll_result_deduction_payroll_run_payroll_frequency_id,amount_deducted,
-amount_carried_forward,pe_amount_carried_forward,cumulative_carried_forward,this_deduction_type,ytd from aeo_deduction where 1=0
+SELECT 
+	aeo.*, 
+    ded.amount_deducted, ded.amount_carried_forward, ded.pe_amount_carried_forward, 
+    ded.cumulative_carried_forward, ded.deduction_status, ded.ytd 
+FROM aeo_deduction ded
+JOIN employee_aeo aeo ON ded.employee_aeo_id = aeo.id;
 
--- actual
-id, employee_aeo_id, employee_aeo_employee_id, 
-payroll_result_deduction_id, payroll_result_deduction_payroll_run_id, payroll_result_deduction_payroll_run_tax_year_id, payroll_result_deduction_payroll_run_payroll_frequency_id, amount_deducted, amount_carried_forward, pe_amount_carried_forward, cumulative_carried_forward, this_deduction_type, ytd
-select * from aeo_deduction;
+CALL get_payroll_results_deductions_for_payroll_run_id(10, true);
+
+CALL get_emps_from_payroll_data_for_payroll_run(2);
