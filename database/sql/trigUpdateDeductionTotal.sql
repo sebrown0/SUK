@@ -8,6 +8,8 @@ BEFORE INSERT ON
 	payroll_result_deduction
 FOR EACH ROW
 BEGIN
-	SET NEW.total = NEW.paye_tax + NEW.ni + NEW.pension;
+	SET NEW.total = 
+		NEW.paye_tax + NEW.ni + NEW.pension + 
+        NEW.aeo_total + NEW.student_loan_total + NEW.other;
 END $$
 DELIMITER ;

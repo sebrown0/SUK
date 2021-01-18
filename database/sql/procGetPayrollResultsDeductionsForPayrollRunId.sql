@@ -12,10 +12,18 @@ BEGIN
         `result`.`employee_payroll_details_payroll_id` AS `result_payroll_id`,
         `result`.`gross_pay` AS `result_gross`,
         `result`.`basic_pay` AS `result_basic`,
-        `result`.`bonus` AS `result_bonus`,
         `result`.`net_pay` AS `result_net`,
+        `result`.`bonus` AS `result_bonus`,        
+        `result`.`commission` AS `result_commission`,
+        `result`.`overtime` AS `result_overtime`,
+        `result`.`pension` AS `result_pension`,
+        `result`.`expenses` AS `result_expenses`,
         `ded`.`paye_tax` AS `ded_paye_tax`,
         `ded`.`ni` AS `ded_ni`,
+        `ded`.`pension` AS `ded_pension`,
+        `ded`.`aeo_total` AS `ded_aeo_total`,
+        `ded`.`student_loan_total` AS `ded_student_loan_total`,
+        `ded`.`other` AS `ded_other`,
         `ded`.`total` AS `ded_total`
     FROM
         `all_emp_results_for_payroll_run_id` `result`

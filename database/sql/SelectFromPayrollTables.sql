@@ -11,6 +11,9 @@ SELECT * FROM employee_payroll_result;
 SELECT * FROM payroll_result_deduction;
 SELECT * FROM student_loan_deduction;
 SELECT * FROM payroll_payment_ytd;
+SELECT * FROM payroll_deduction_ytd;
+
+CALL get_payroll_ytd ('2021',4);
 
 SELECT 
 	aeo.*, 
