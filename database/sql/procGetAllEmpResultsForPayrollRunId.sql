@@ -8,7 +8,7 @@ BEGIN
 		epr.payroll_run_id ,epr.employee_payroll_details_payroll_id,
 		epr.gross_pay, epr.basic_pay , epr.net_pay, epr.bonus 
 	FROM
-		employee_payroll_result epr
+		payroll_result_payment epr
 	WHERE
 		epr.payroll_run_id = payrollRun; 
         

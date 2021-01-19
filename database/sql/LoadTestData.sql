@@ -66,6 +66,15 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
+TRUNCATE test_data_salary_sacrifice;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\test_data_salary_sacrifice.csv'
+INTO TABLE test_data_salary_sacrifice 
+CHARACTER SET latin1
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
 TRUNCATE test_data_payroll_params;
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\test_data_payroll_params.csv'
 INTO TABLE test_data_payroll_params 
@@ -81,6 +90,7 @@ SET foreign_key_checks = 1;
 
 -- Have to delete the data in test_result_expected because it has FK to test.
 TRUNCATE test_result_expected;
+-- --------------------------------------------------------------------------
 DELETE FROM test WHERE test_num <> "";
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\test.csv'
 INTO TABLE test 

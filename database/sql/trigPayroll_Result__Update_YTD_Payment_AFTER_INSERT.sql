@@ -1,11 +1,11 @@
 USE salaroo_uk;
-DROP TRIGGER IF EXISTS payroll_result_AFTER_INSERT;
+DROP TRIGGER IF EXISTS payroll_result_payment_AFTER_INSERT;
 
 DELIMITER $$
 CREATE TRIGGER 
 	payroll_result_AFTER_INSERT
 AFTER INSERT ON 
-	employee_payroll_result
+	payroll_result_payment
 FOR EACH ROW
 BEGIN 
 	DECLARE oldGross DECIMAL(10,2) DEFAULT 0;

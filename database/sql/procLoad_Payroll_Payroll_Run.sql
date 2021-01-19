@@ -6,7 +6,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `load_payroll_payroll_run`(
 BEGIN
 	-- Load a new payroll run. 
     -- WARNING: THIS ROUTINE DELETES DATA FROM -
-    -- payroll_result_deduction/employee_payroll_result/payroll_run tables.
+    -- payroll_result_deduction/payroll_result_payment/payroll_run tables.
     -- IF THERE HAS BEEN A PREVIOUS RUN FOR THE Freq, Year & Payroll Num.
 	
     DECLARE thisPayrollNumber INT;         
@@ -15,7 +15,7 @@ BEGIN
     SELECT last_payroll_run_number + 1 INTO thisPayrollNumber FROM payroll_frequency WHERE id = freqId;
     
     -- Delete the previous run if there was one. 
-    -- This will also cascade to the payroll_result_deduction/employee_payroll_result tables.
+    -- This will also cascade to the payroll_result_deduction/payroll_result_payment tables.
     DELETE FROM payroll_run 
     WHERE payroll_number = thisPayrollNumber AND tax_year_id = taxYear AND payroll_frequency_id = freqId;
     

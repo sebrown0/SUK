@@ -1,0 +1,2 @@
+id,salary_sacrifice_scheme_num,employee_payroll_id,date_to_start,date_to_end,sacrifice_amount,below_min_wage
+1,2,NI123456B,2020-04-06,2021-04-05,1000,0

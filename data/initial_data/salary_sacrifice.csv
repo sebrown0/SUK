@@ -1,0 +1,8 @@
+scheme_num,scheme_code,tax_year_id,scheme_name,run_from_date,run_to_date,tax_exempt,description
+1,SSPEN1,2021,Pension 1 - Smart (Save More And Reduce Tax),06/04/2020,05/04/2021,1,
+2,SSPEN2,2021,Pension 2 - Standard,06/04/2020,05/04/2021,1,
+3,SSCHILD,2021,Employer supported childcare,06/04/2020,05/04/2021,1,
+4,SSCYCLE,2021,Cycle to work,06/04/2020,05/04/2021,1,
+5,SSCAR,2021,Ultra-low emissions vehicles,06/04/2020,05/04/2021,1,
+6,SSTRAIN,2021,Retraining,06/04/2020,05/04/2021,0,
+7,SSINTAN,2021,Intangibles,06/04/2020,05/04/2021,0,

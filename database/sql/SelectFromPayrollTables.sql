@@ -7,9 +7,10 @@ SELECT * FROM payroll_aeo;
 SELECT * FROM payroll_student_loan;
 
 -- Results
-SELECT * FROM employee_payroll_result;
+SELECT * FROM payroll_result_payment;
 SELECT * FROM payroll_result_deduction;
 SELECT * FROM student_loan_deduction;
+SELECT * FROM aeo_deduction;
 SELECT * FROM payroll_payment_ytd;
 SELECT * FROM payroll_deduction_ytd;
 

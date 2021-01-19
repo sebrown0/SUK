@@ -4,5 +4,5 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `clear_all_result_tables`(
     IN payFrequencyId INT)
 BEGIN
     CALL clear_result_table(payrollRunId, taxYear, payFrequencyId, 'payroll_result_deduction');
-    CALL clear_result_table(payrollRunId, taxYear, payFrequencyId, 'employee_payroll_result');
+    CALL clear_result_table(payrollRunId, taxYear, payFrequencyId, 'payroll_result_payment');
 END
