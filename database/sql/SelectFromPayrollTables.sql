@@ -1,8 +1,7 @@
 -- Payroll data
 SELECT * FROM payroll_run;
 SELECT * FROM payroll_data;
-SELECT * FROM payroll_basic;
-SELECT * FROM payroll_gross;
+SELECT * FROM payroll_salary_data;
 SELECT * FROM payroll_aeo;
 SELECT * FROM payroll_student_loan;
 
@@ -25,4 +24,4 @@ JOIN employee_aeo aeo ON ded.employee_aeo_id = aeo.id;
 
 CALL get_payroll_results_deductions_for_payroll_run_id(10, true);
 
-CALL get_emps_from_payroll_data_for_payroll_run(2);
+CALL get_emps_from_payroll_data_for_payroll_run(1);

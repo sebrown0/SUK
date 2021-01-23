@@ -8,6 +8,7 @@ BEGIN
 	DECLARE basicRate DECIMAL(8,2);
 	DECLARE basicTotal DECIMAL(9,2);
 	DECLARE commission DECIMAL(8,2);
+    DECLARE hoursWorked DECIMAL(5,2);
 	DECLARE bonus DECIMAL(8,2);
 	DECLARE otHours DECIMAL(5,2);
 	DECLARE otRate DECIMAL(5,2);
@@ -25,7 +26,7 @@ BEGIN
 		SELECT 
 			sal_data.emp_payroll_id,
 			sal_data.basic_units, sal_data.basic_rate, sal_data.basic_total,
-            sal_data.commision, sal_data.bonus, 
+            sal_data.hours_worked, sal_data.commision, sal_data.bonus, 
             sal_data.ot_hours, sal_data.ot_rate, sal_data.ot_amount,
             sal_data.total_gross
 		FROM (
@@ -46,7 +47,7 @@ BEGIN
         INTO    
 			empPayrollId,
 			basicUnits, basicRate, basicTotal,
-			commission, bonus,
+			hoursWorked, commission, bonus,
 			otHours, otRate, otAmount,
 			totalGross;
 	
@@ -58,9 +59,9 @@ BEGIN
         VALUES (payrollDataIdForEmp, commission, totalGross, bonus, otAmount)
         ON DUPLICATE KEY UPDATE `commision` = commission, `total_gross` = totalGross, `bonus` = bonus, `overtime` = otAmount;
         
-        INSERT INTO payroll_basic (`payroll_data_id`, `units`, `rate`, `total`) 
-        VALUES (payrollDataIdForEmp, basicUnits, basicRate, basicTotal)
-		ON DUPLICATE KEY UPDATE `units` = basicUnits, `rate` = basicRate, `total` = basicTotal;
+        INSERT INTO payroll_basic (`payroll_data_id`, `hours_worked`, `units`, `rate`, `total`) 
+        VALUES (payrollDataIdForEmp, hoursWorked, basicUnits, basicRate, basicTotal)
+		ON DUPLICATE KEY UPDATE `hours_worked` = hoursWorked, `units` = basicUnits, `rate` = basicRate, `total` = basicTotal;
 		
 	END LOOP load_payroll_data;	
 END

@@ -4,11 +4,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `get_basic_and_gross_for_emp`(
     IN payrollNum INT,
     IN empPayrollId VARCHAR(45))
 BEGIN
-DECLARE freqId INT;
+	DECLARE freqId INT;
     SET freqId = getFrequencyId(payFrequency, taxYear);
     SELECT 
 		pd.id as payroll_data_id, pd.employee_payroll_id, pd.payroll_run_id, 
-		pb.rate, pb.total, pb.units,
+		pb.hours_worked, pb.rate, pb.total, pb.units,
 		pg.bonus, pg.commision, pg.overtime, pg.total_gross		
 	FROM 
 		payroll_data pd

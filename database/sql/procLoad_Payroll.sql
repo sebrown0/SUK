@@ -30,7 +30,6 @@ BEGIN
     
     -- Load the data.
     CALL load_payroll_included_emps(@payrollRunId, freqId);
-    CALL load_payroll_salary_data(taxYear, freqId, @payrollNum);
     CALL load_payroll_aeo(@payrollRunId);
     CALL load_payroll_student_loan(@payrollRunId);
          

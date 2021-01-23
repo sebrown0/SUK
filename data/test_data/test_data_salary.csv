@@ -1,20 +1,20 @@
-salary_test_num,description,tax_code,tax_rate,nic,basic_amount,basic_hours,basic_rate,basic_units,overtime_15,bonus,commission,expenses,salary_sacrifice_total,pension_total,annual_leave_for_period,annual_leave_for_ytd,mat_leave_for_period,mat_leave_for_ytd,pat_leave_for_period,pat_leave_for_ytd,sick_leave_for_period,sick_leave_for_ytd
--1,Dummy row for when data from salary is not included in a test,0,0,N,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-1,Standard rate tax code for RUK. Basic 1000 and no leave,1250L,40,A,1000,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-2,Standard rate tax code for RUK. Basic 5000 Gross 5680 and no leave,1250L,40,A,5000,40,0,1,0,500,180,0,0,0,0,0,0,0,0,0,0,0
-3,"Basic Rate tax for RUK. Basic/Gross 5000, ML 30 days",BR,40,A,5000,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-4,"Higher rate tax for Scot. Gross 5000, ML 30 days and previous ML 90 days",SD1,40,A,5000,40,0,1,0,0,0,0,0,0,0,0,30,90,0,0,0,0
-5,"Zero rate tax for Scot. Gross 5000, ML 30 days and total ML 70 days",S0T,40,A,1000,40,0,1,0,0,0,0,0,0,0,0,30,70,0,0,0,0
-6,"Zero rate tax for Scot. Gross 1000, PL 5 days and total PL 5 days",S0T,40,A,1000,40,0,1,0,0,0,0,0,0,0,0,0,0,5,5,0,0
-7,"Standard rate for Wales with 1000 allowance. Gross 1000, PL 10 days and total PL 12 days",C1000L,40,A,2000,40,0,1,0,0,0,0,0,0,0,0,0,0,10,12,0,0
-8,"Basic rate for Wales. Gross 2000, PL 10 days and total PL 20 days",CBR,40,A,2000,40,0,1,0,0,0,0,0,0,0,0,0,0,10,20,0,0
-9,Standard rate tax code for RUK. Gross 5680 and 10 days annual leave,1250L,40,A,5000,40,0,1,0,500,180,0,0,0,10,0,0,0,0,0,0,0
-10,"Basic rate for Wales. Gross 2000, SL 10 days.",CBR,40,A,2000,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,10,0
-11,Zero rate tax for Scot. Basic 3000. Expenses 100,S0T,40,A,3000,40,0,1,0,0,0,100,0,0,0,0,0,0,0,0,0,0
-12,Standard rate tax code. Basic 10/hr. 40 Hrs worked.,1250L,40,A,400,40,10,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-13,Standard rate tax code. Basic 10/hr. 40 Hrs worked. 10 hrs OT,1250L,40,A,400,40,10,40,10,0,0,0,0,0,0,0,0,0,0,0,0,0
-14,Basic Rate tax for RUK.  Basic 10/hr. 20 Hrs worked. 10 hrs OT,BR,40,A,200,20,10,20,10,0,0,0,0,0,0,0,0,0,0,0,0,0
-15,Month 1 tax code. 2000 Basic,1250M1,40,A,2000,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-16,K code. 1700 basic,K100,40,A,1700,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-17,Standard rate tax code for RUK. Basic 500. Has low basic so that it can be used with AEOs for Pes,1250L,40,A,50,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-18,Standard rate tax code for RUK. No Basic and no leave,1250L,40,A,0,40,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+salary_test_num,description,tax_code,tax_rate,nic,basic_amount,basic_hours,basic_rate,basic_units,hours_worked,overtime_15,bonus,commission,expenses,salary_sacrifice_total,pension_total,annual_leave_for_period,annual_leave_for_ytd,mat_leave_for_period,mat_leave_for_ytd,pat_leave_for_period,pat_leave_for_ytd,sick_leave_for_period,sick_leave_for_ytd
+-1,Dummy row for when data from salary is not included in a test,0,0,N,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1,Standard rate tax code for RUK. Basic 1000 and no leave,1250L,40,A,1000,40,0,1,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2,Standard rate tax code for RUK. Basic 5000 Gross 5680 and no leave,1250L,40,A,5000,40,0,1,40,0,500,180,0,0,0,0,0,0,0,0,0,0,0
+3,"Basic Rate tax for RUK. Basic/Gross 5000, ML 30 days",BR,40,A,5000,40,0,1,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+4,"Higher rate tax for Scot. Gross 5000, ML 30 days and previous ML 90 days",SD1,40,A,5000,40,0,1,40,0,0,0,0,0,0,0,0,30,90,0,0,0,0
+5,"Zero rate tax for Scot. Gross 5000, ML 30 days and total ML 70 days",S0T,40,A,1000,40,0,1,40,0,0,0,0,0,0,0,0,30,70,0,0,0,0
+6,"Zero rate tax for Scot. Gross 1000, PL 5 days and total PL 5 days",S0T,40,A,1000,40,0,1,40,0,0,0,0,0,0,0,0,0,0,5,5,0,0
+7,"Standard rate for Wales with 1000 allowance. Gross 1000, PL 10 days and total PL 12 days",C1000L,40,A,2000,40,0,1,40,0,0,0,0,0,0,0,0,0,0,10,12,0,0
+8,"Basic rate for Wales. Gross 2000, PL 10 days and total PL 20 days",CBR,40,A,2000,40,0,1,40,0,0,0,0,0,0,0,0,0,0,10,20,0,0
+9,Standard rate tax code for RUK. Gross 5680 and 10 days annual leave,1250L,40,A,5000,40,0,1,40,0,500,180,0,0,0,10,0,0,0,0,0,0,0
+10,"Basic rate for Wales. Gross 2000, SL 10 days.",CBR,40,A,2000,40,0,1,40,0,0,0,0,0,0,0,0,0,0,0,0,10,0
+11,Zero rate tax for Scot. Basic 3000. Expenses 100,S0T,40,A,3000,40,0,1,40,0,0,0,100,0,0,0,0,0,0,0,0,0,0
+12,Standard rate tax code. Basic 10/hr. 40 Hrs worked.,1250L,40,A,400,40,10,40,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+13,Standard rate tax code. Basic 10/hr. 40 Hrs worked. 10 hrs OT,1250L,40,A,400,40,10,40,40,10,0,0,0,0,0,0,0,0,0,0,0,0,0
+14,Basic Rate tax for RUK.  Basic 10/hr. 20 Hrs worked. 10 hrs OT,BR,40,A,200,20,10,20,20,10,0,0,0,0,0,0,0,0,0,0,0,0,0
+15,Month 1 tax code. 2000 Basic,1250M1,40,A,2000,40,0,1,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+16,K code. 1700 basic,K100,40,A,1700,40,0,1,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+17,Standard rate tax code for RUK. Basic 500. Has low basic so that it can be used with AEOs for Pes,1250L,40,A,50,40,0,1,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+18,Standard rate tax code for RUK. No Basic and no leave,1250L,40,A,0,40,0,1,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0
