@@ -8,7 +8,7 @@ BEGIN
 	-- Return the RS ordered by the priority so that when the deductions occur
     -- in payroll we can be sure that they are in the correct order.    
 	SELECT 	
-		emp_aeo.id AS emp_aeo_id,
+		emp_aeo.id AS emp_aeo_id, emp_aeo.uses_dea_higher_rate,
 		pay_aeo.id AS pay_aeo_id, pay_aeo.payroll_data_id, pay_aeo.employee_aeo_id, pay_aeo.priority, pay_aeo.is_priority, 
 		pay_aeo.deduction_amount, pay_aeo.deduction_type, pay_aeo.cumulative_unpaid, pay_aeo.pe_type, pay_aeo.pe_amount, 
         pay_aeo.deduct_admin_charge, pay_aeo.aeo_type_description, pay_aeo.order_date, pay_aeo.employee_id, 

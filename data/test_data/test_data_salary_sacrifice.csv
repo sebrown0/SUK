@@ -1,3 +1,3 @@
 salary_sacrifice_test_num,sal_sac_rec_num,description,scheme_code,scheme_name,tax_year_id,tax_exempt,date_to_start,date_to_end,sacrifice_amount,below_min_wage
 -1,-1,Dummy row for when data from salary sacrifice is not included in a test,-1,None,-1,0,1900-01-00,1900-01-00,0,0
-1,1,Standard pension scheme.,SSPEN2,Pension 2 - Standard,2021,1,06/04/2020,05/04/2021,1000,0
+1,1,Standard pension scheme.,SSPEN2,Pension 2 - Standard,2021,1,2020-04-06,2021-04-05,1000,0

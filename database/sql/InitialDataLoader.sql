@@ -151,7 +151,7 @@ DELIMITER $$
 DROP PROCEDURE IF EXISTS `load_salary_data`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `load_salary_data`(
 	IN forEmpPayrollId VARCHAR(45),
-    IN commision DECIMAL(8,2), 
+    IN commission DECIMAL(8,2), 
     IN bonus DECIMAL(10,2), 
     IN expenses DECIMAL(8,2), 
     IN pension DECIMAL(8,2), 
@@ -198,13 +198,13 @@ BEGIN
 		-- This could be expanded to other rates, i.e. pass the rate as a param.
 		SET otAmount = (basicRate * otRate) * otHours;
 	END IF;
-	SET grossTotal = basicTotal + otAmount + bonus + pension + commision;
+	SET grossTotal = basicTotal + otAmount + bonus + pension + commission;
     
     INSERT INTO payroll_salary_data (
 		`emp_payroll_id`, `emp_id`, `pay_frequency`, `nic`, `tax_code`, `tax_rate`, 
         `basic_rate`, `notional_salary`,
-        `basic_units`, `hours_worked`, `basic_total`,
-		`pension_total`, `commision`, `bonus`, `expenses`,
+        `basic_units`, `hours_worked`, `basic_amount`,
+		`pension_total`, `commission`, `bonus`, `expenses`,
          `ot_hours`, `ot_rate`, `ot_amount`, `total_gross`, 
         `date_added`, `salary_sacrifice_pension`,`salary_sacrifice_total`
         )   
@@ -219,10 +219,10 @@ BEGIN
 				payroll_id = forEmpPayrollId
 		), 
 		inputed_data AS (
-			SELECT forEmpPayrollId, basicUnits, otHours, pension, commision, bonus, expenses
+			SELECT forEmpPayrollId, basicUnits, otHours, pension, commission, bonus, expenses
 		) 	SELECT 
 				epd.*, 
-				basicUnits, hoursWorked, basicTotal, inp.pension, inp.commision, inp.bonus, inp.expenses,
+				basicUnits, hoursWorked, basicTotal, inp.pension, inp.commission, inp.bonus, inp.expenses,
 				otHours, otRate, otAmount, grossTotal, now(), salSacPension, salSacTotal
 			FROM 
 				emp_payroll_details epd 

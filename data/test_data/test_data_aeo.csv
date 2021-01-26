@@ -1,4 +1,4 @@
-aeo_test_num,aeo_rec_num,description,is_priority,priority,deduction_amount,deduction_type,unpaid_bf,cumulative_unpaid,pe_type,pe_amount,pe_amount_brought_forward,deduct_admin_charge,aeo_type_description,order_date,ytd,uses_dea_higher_rate
+aeo_test_num,aeo_rec_num,description,is_priority,priority,deduction_amount,deduction_type,unpaid_bf,cumulative_unpaid,pe_type,pe_amount,pe_amount_carried_forward,deduct_admin_charge,aeo_type_description,order_date,ytd,uses_dea_higher_rate
 -1,-1,Dummy row for when AEO data is not included in a test.,0,0,0,V,0,0,A,0,0,0,None,2020-01-01,0,0
 1,1,CSA :- Ded Type = [V]ALUE. PE = [A]MOUNT. Ded Admin = True. Action = Deduct all.,1,1,100,V,1,0,A,50,0,1,Child Support,2020-01-01,0,0
 2,1,CSA :- Ded Type = [V]ALUE. PE = [A]MOUNT. Ded Admin = True. Action = Deduct part.,1,1,100,V,1,0,A,900,0,1,Child Support,2020-01-01,0,0

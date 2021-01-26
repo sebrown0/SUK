@@ -1,8 +1,9 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_emps_from_payroll_data_for_payroll_run`(	
-    IN payrollRunId INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_emp_from_payroll_data_for_payroll_run`(	
+    IN payrollRunId INT,
+    IN empPayrollID VARCHAR(45))
 BEGIN
-	-- Get all the employee details required for a payroll run.
-    -- Only the emps that are in the payroll_data for the payrollRunId (payroll run) are included.
+	-- Get all an employee's details required for a payroll run.
+    -- get_emps_from_payroll_data_for_payroll_run does the same but for all emps in the payroll run.
 	
 	SELECT       
 		pd.id AS payroll_data_id, pd.payroll_run_id, 
@@ -20,5 +21,7 @@ BEGIN
 					INNER JOIN employee_hr hr
 					ON hr.ni_number = epd.payroll_id
     WHERE 
-		pd.payroll_run_id = payrollRunId;
+		pd.payroll_run_id = payrollRunId
+	AND
+		epd.payroll_id = empPayrollID;
 END
