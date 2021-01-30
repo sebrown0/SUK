@@ -1,2 +1,2 @@
-id,name,hmrc_office_number,paye_reference,accounts_office_reference,contracted_out_number,self_assesment_utr,cotax_reference,salary_sacrifice_ni_retained
-DAK1,Dakar,123,PAYE123,ACCOUNTSREF123,NULL,NULL,NULL,50
+id,name,hmrc_office_number,paye_reference,accounts_office_reference,contracted_out_number,self_assesment_utr,cotax_reference,salary_sacrifice_ni_retained,postponement_approach_id,apportionment_rule,duties_start_date
+DAK1,Dakar,123,PAYE123,ACCOUNTSREF123,NULL,NULL,NULL,50,1,260,2020-01-01

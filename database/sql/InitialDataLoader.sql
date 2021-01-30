@@ -7,6 +7,7 @@ SET foreign_key_checks = 0;
 SET @employer_tax_year= '2021';
 CALL create_payroll_dates(@employer_tax_year);
 
+-- PAYROLL BELOW
 TRUNCATE tax_year;
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\tax_year.csv'
 INTO TABLE tax_year 
@@ -142,6 +143,24 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
+
+-- PENSIONS BELOW
+TRUNCATE postponement_approach;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\postponement_approach.csv'
+INTO TABLE postponement_approach 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+TRUNCATE eligibility;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\eligibility.csv'
+INTO TABLE eligibility 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
 
 SET foreign_key_checks = 1;
 -- ----------------------------- --
