@@ -1,0 +1,6 @@
+criterion_id,enrolment_criteria_id,enrolment_criteria_tax_year,age_min,age_max,earn_min,earn_max,is_under_spa,is_spa
+AE_2021_1,AE_2021,2021,22,-1,10000,0,1,0
+OPTIN_2021_1,OPTIN_2021,2021,16,21,10000,0,0,0
+OPTIN_2021_2,OPTIN_2021,2021,0,0,10000,0,0,1
+OPTIN_2021_2,OPTIN_2021,2021,16,74,6240,10000,0,0
+WWQE_2021_1,WWQE_2021,2021,16,74,0,6240,0,0
