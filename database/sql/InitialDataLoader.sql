@@ -146,7 +146,7 @@ IGNORE 1 ROWS;
 
 -- PENSIONS BELOW
 TRUNCATE postponement_approach;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\postponement_approach.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\postponement_approach.csv'
 INTO TABLE postponement_approach 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -154,7 +154,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE eligibility;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\eligibility.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\eligibility.csv'
 INTO TABLE eligibility 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -162,7 +162,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE assessment_reason;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\assessment_reason.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\assessment_reason.csv'
 INTO TABLE assessment_reason 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -170,7 +170,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE notice_type;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\notice_type.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\notice_type.csv'
 INTO TABLE notice_type 
 CHARACTER SET latin1
 FIELDS TERMINATED BY ',' 
@@ -179,7 +179,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE enrolment_type;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\enrolment_type.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\enrolment_type.csv'
 INTO TABLE enrolment_type 
 CHARACTER SET latin1
 FIELDS TERMINATED BY ',' 
@@ -188,7 +188,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE enrolment_criteria;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\enrolment_criteria.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\enrolment_criteria.csv'
 INTO TABLE enrolment_criteria 
 CHARACTER SET latin1
 FIELDS TERMINATED BY ',' 
@@ -197,9 +197,17 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE enrolment_criterion;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\enrolment_criterion.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\enrolment_criterion.csv'
 INTO TABLE enrolment_criterion 
 CHARACTER SET latin1
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+TRUNCATE state_pension_age_67_to_68;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\state_pension_age_67_to_68.csv'
+INTO TABLE state_pension_age_67_to_68 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
