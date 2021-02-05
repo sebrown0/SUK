@@ -4,8 +4,8 @@ BEGIN
     -- --------------------------------------------------------------------------
     
     CALL create_all_emp_records();    
-    CALL create_included_emps_for_payroll(payrollRunId);    
-    
+    CALL create_included_emps_for_payroll(payrollRunId);
+        
     SELECT * FROM temp_all_emp_recs 
     WHERE payroll_id IN(SELECT * FROM temp_included_emps);	
 END
