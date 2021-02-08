@@ -145,6 +145,22 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 -- PENSIONS BELOW
+TRUNCATE pension_scheme;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\pension_scheme.csv'
+INTO TABLE pension_scheme 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+TRUNCATE employee_pension;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\employee_pension.csv'
+INTO TABLE employee_pension 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
 TRUNCATE postponement_approach;
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\postponement_approach.csv'
 INTO TABLE postponement_approach 
