@@ -1,8 +1,0 @@
-id,notice_description
-1,Notice for EJH who must be automatically enrolled and NEHJ who have opted in. (1s)
-2,Standard notice for NEJHs who can opt in and workers without qualifying earnings who can ask to join. (2.1s)
-4,This can also be used as an alternative optional notice for eligible and non-eligible jobholders who are already members of a qualifying pension scheme. (4s)
-5,A standard notice explaining that we're using a waiting period. This is sent out to workers when they haven't been assessed. Workers who are existing members of a qualifying pension scheme. If we do not want to include them use Notice 6.
-6,A standard notice explaining that we’re using a waiting period. This is sent out to workers when they haven't been assessed. Use this notice if we don’t want to inform workers who are existing members of a qualifying pension scheme.
-7,Notice explaining that the company is using a waiting period. This is sent out to eligible or non-eligible jobholders who aren’t already existing members of a qualifying pension scheme.
-9,Notice explaining that the company is using or have used a short waiting period. This is sent out to eligible jobholders who aren’t already existing members of a qualifying pension scheme. This notice also contains the statutory information which you must provide to eligible jobholders who are about to be AE.

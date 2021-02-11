@@ -1,9 +1,0 @@
-id,description
-NONE,No assessment
-DEFERRAL_DATE,Assess employee at deferral date
-PRP_START,Assess at start of pay reference period
-EMP_START,Assess new starter
-DUTIES_START_DATE,Assess at employer's duties start date
-EJH_TRIGGER,Assess because employee has become Eligible Job Holder
-OPT_IN,Employee has opted in.
-PAYROLL,Asses at payroll run.

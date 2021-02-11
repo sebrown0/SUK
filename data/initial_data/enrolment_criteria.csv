@@ -1,6 +1,0 @@
-id,tax_year,is_no_criteria,is_worker_automatically_enroled,is_there_opt_out_period
-AE_2021,2021,0,1,1
-OPTIN_2021,2021,0,0,1
-WWQE_2021,2021,0,0,0
-VOL_2021,2021,1,0,0
-OTHER_2021,2021,1,0,0
