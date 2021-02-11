@@ -30,7 +30,7 @@ CALL get_payroll_ytd_for_emp('2021','W1','NI123456A');
 CALL get_payroll_student_loans('2021','M1',1, 'NI123456D');
 CALL get_payroll_salary_data_for_emp('NI123456A','W1');
 CALL get_emp_record('NI123456A');
-SELECT get_next_payroll_number('2021','M1');
+SELECT get_next_payroll_number('2021','W1');
 
 SELECT 
 	aeo.*, 
