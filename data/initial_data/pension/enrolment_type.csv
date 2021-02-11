@@ -1,0 +1,6 @@
+id,enrolment_description,enrolment_criteria_id,enrolment_criteria_tax_year
+AE,Automatically enroled workers or EJHs,AE_2021,2021
+OPTIN,Workers who choose to optin or NEJHs,OPTIN_2021,2021
+WWQE,Workers without qualifying earnings or Ews,WWQE_2021,2021
+VOL,Volunteers who optin before staging date,VOL_2021,2021
+OTHER,Have been previously enroled,OTHER_2021,2021

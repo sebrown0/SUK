@@ -1,0 +1,15 @@
+id,description
+1,Postpone to the start of the next PRP at Staging date
+2,Postponement not used
+3,Postponement not allowed
+4,User selected date
+5,Postpone to the start of the next PRP at first day of employment
+6,Maximum postponement at first day of employment
+7,Maximum postponement when worker triggers as an eligible jobholder
+8,Maximum postponement wherever possible
+9,Postpone to the start of the next PRP when worker triggers as an eligible jobholder
+10,Postpone to the start of the next PRP wherever possible
+11,Postpone to the start of the latest allowable PRP at first day of employment
+12,Postpone to the start of the latest allowable PRP when worker triggers as an eligible jobholder
+13,Postpone to the start of the latest allowable PRP wherever possible
+14,User selected date or Maximum postponement when worker triggers as an eligible jobholder
