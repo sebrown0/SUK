@@ -1,3 +1,5 @@
+SELECT * FROM pay_reference_period;
+SELECT * FROM pay_reference_period_qual_earnings;
 SELECT * FROM pension_scheme;
 SELECT * FROM employee_pension;
 SELECT * FROM assessment_reason;

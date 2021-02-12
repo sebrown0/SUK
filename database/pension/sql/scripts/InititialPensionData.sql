@@ -1,6 +1,8 @@
 USE salaroo_uk_pension;
 SET foreign_key_checks = 0;
 
+CALL create_prp_dates("2021");
+
 TRUNCATE pension_scheme;
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\pension_scheme.csv'
 INTO TABLE pension_scheme 
@@ -85,4 +87,7 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
+-- Temp for testing
+INSERT INTO `salaroo_uk_pension`.`pay_reference_period_qual_earnings` (`pay_reference_period_id`, `employee_pension_id`, `amount`) 
+VALUES (NULL, NULL, NULL);
 SET foreign_key_checks = 1;
