@@ -1,0 +1,3 @@
+General,,,,,,Pay Reference Period (prp_id is set via trigger),,,Assessment,,Eligibility,,Enrolment,,,Postponement,,,,,Notice,,,
+test_num,test_date,employee_pension_id,employee_id,emp_payroll_id,pension_scheme_id,prp_tax_year,prp_pay_frequency,prp_amount,assessment_reason,assessment_date,eligibility_code,eligibility_date_achieved,is_enroled,enrolment_date,enrolment_type_id,postponement_allowed,is_postponed,has_been_postponed,date_of_postponement,deferral_date,notice_type_id,notice_due_by,notice_sent_on,end_of_row
+1,22/05/2021,MS1_NEST,MS1,NI123456B,NEST,2021,M1,\N,PRP_START,\N,NEJH,22/11/2021,0,01/01/2021,WWQE,1,0,0,06/05/2021,06/06/2021,1,28/08/2021,\N,1

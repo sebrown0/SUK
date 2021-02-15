@@ -1,3 +1,5 @@
+-- USE salaroo_uk_pension;
+USE salaroo_uk_pension_test;
 SELECT * FROM pension_scheme; -- Tick
 SELECT * FROM employee_pension; -- Tick
 

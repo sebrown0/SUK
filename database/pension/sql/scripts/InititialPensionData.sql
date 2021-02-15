@@ -1,4 +1,6 @@
-USE salaroo_uk_pension;
+-- USE salaroo_uk_pension;
+sUSE salaroo_uk_pension_test;
+
 SET foreign_key_checks = 0;
 
 CALL create_prp_dates("2021");
@@ -87,7 +89,4 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
--- Temp for testing
-INSERT INTO `salaroo_uk_pension`.`pay_reference_period_qual_earnings` (`pay_reference_period_id`, `employee_pension_id`, `amount`) 
-VALUES (NULL, NULL, NULL);
 SET foreign_key_checks = 1;
