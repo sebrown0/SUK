@@ -23,7 +23,7 @@ BEGIN
     CALL insert_employee_eligibility(empPenId);
     CALL insert_employee_postponement(empPenId);
     CALL insert_employee_enroled(empPenId, empId);
-    CALL insert_assessment_result(empPenId);
+    CALL insert_employee_assessment(empPenId);
    
 	SET foreign_key_checks = 1;
 END

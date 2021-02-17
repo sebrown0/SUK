@@ -1,0 +1,10 @@
+id,result_code,description
+1,POSTPONEMENT,Postpone after assessment
+2,POSTPONEMENT_NOT_POSSIBLE,Postponement not allowed or possible.
+3,NEJH,Non Entitled Job Holder
+4,EJH,Entitled Job Holder
+5,EJH_OPT_IN,Entitled Job Holder that opts in
+6,EW,Entitled Worker
+7,ENROLED_OPT_IN,Unknown - TODO
+8,NONE,No assessment result
+9,ERROR,Error in assessment

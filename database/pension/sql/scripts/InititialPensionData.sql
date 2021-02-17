@@ -1,5 +1,5 @@
 -- USE salaroo_uk_pension;
-sUSE salaroo_uk_pension_test;
+USE salaroo_uk_pension_test;
 
 SET foreign_key_checks = 0;
 
@@ -32,6 +32,14 @@ IGNORE 1 ROWS;
 TRUNCATE eligibility;
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\eligibility.csv'
 INTO TABLE eligibility 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+TRUNCATE assessment_result;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\assessment_result.csv'
+INTO TABLE assessment_result 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'

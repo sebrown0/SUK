@@ -10,7 +10,8 @@ SELECT * FROM employee_postponement; -- Tick
 SELECT * FROM postponement_approach;
 
 SELECT * FROM assessment_reason;
-SELECT * FROM assessment_result; -- Tick
+SELECT * FROM assessment_result;
+SELECT * FROM employee_assessment; -- Tick
 
 SELECT * FROM enrolment_type;
 SELECT * FROM enrolment_criterion;

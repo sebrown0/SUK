@@ -177,11 +177,11 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `salaroo_uk_pension_test`.`assessment_result`
+-- Table `salaroo_uk_pension_test`.`employee_assessment`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `salaroo_uk_pension_test`.`assessment_result` ;
+DROP TABLE IF EXISTS `salaroo_uk_pension_test`.`employee_assessment` ;
 
-CREATE TABLE IF NOT EXISTS `salaroo_uk_pension_test`.`assessment_result` (
+CREATE TABLE IF NOT EXISTS `salaroo_uk_pension_test`.`employee_assessment` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `emp_pension_id` VARCHAR(40) NOT NULL,
   `assessment_date` VARCHAR(45) NOT NULL,
@@ -192,23 +192,23 @@ CREATE TABLE IF NOT EXISTS `salaroo_uk_pension_test`.`assessment_result` (
   PRIMARY KEY (`id`, `emp_pension_id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
   INDEX `fk_employee_assessment_assessment_reason1_idx` (`assessment_reason` ASC) VISIBLE,
-  INDEX `fk_assessment_result_employee_eligibility1_idx` (`employee_eligibility_id` ASC) VISIBLE,
-  INDEX `fk_assessment_result_employee_pension1_idx` (`emp_pension_id` ASC) VISIBLE,
-  INDEX `fk_assessment_result_notices_due1_idx` (`notices_due_id` ASC) VISIBLE,
-  INDEX `fk_assessment_result_employee_postponement1_idx` (`employee_postponement_id` ASC) VISIBLE,
-  CONSTRAINT `fk_assessment_result_employee_eligibility1`
+  INDEX `fk_employee_assessment_employee_eligibility1_idx` (`employee_eligibility_id` ASC) VISIBLE,
+  INDEX `fk_employee_assessment_employee_pension1_idx` (`emp_pension_id` ASC) VISIBLE,
+  INDEX `fk_employee_assessment_notices_due1_idx` (`notices_due_id` ASC) VISIBLE,
+  INDEX `fk_employee_assessment_employee_postponement1_idx` (`employee_postponement_id` ASC) VISIBLE,
+  CONSTRAINT `fk_employee_assessment_employee_eligibility1`
     FOREIGN KEY (`employee_eligibility_id`)
     REFERENCES `salaroo_uk_pension_test`.`employee_eligibility` (`id`)
     ON DELETE CASCADE,
-  CONSTRAINT `fk_assessment_result_employee_pension1`
+  CONSTRAINT `fk_employee_assessment_employee_pension1`
     FOREIGN KEY (`emp_pension_id`)
     REFERENCES `salaroo_uk_pension_test`.`employee_pension` (`employee_pension_id`)
     ON DELETE CASCADE,
-  CONSTRAINT `fk_assessment_result_employee_postponement1`
+  CONSTRAINT `fk_employee_assessment_employee_postponement1`
     FOREIGN KEY (`employee_postponement_id`)
     REFERENCES `salaroo_uk_pension_test`.`employee_postponement` (`id`)
     ON DELETE CASCADE,
-  CONSTRAINT `fk_assessment_result_notices_due1`
+  CONSTRAINT `fk_employee_assessment_notices_due1`
     FOREIGN KEY (`notices_due_id`)
     REFERENCES `salaroo_uk_pension_test`.`notices_due` (`id`)
     ON DELETE CASCADE,
@@ -230,14 +230,14 @@ CREATE TABLE IF NOT EXISTS `salaroo_uk_pension_test`.`contribution` (
   `date_of_contribution` DATE NOT NULL,
   `employee_contribution` DECIMAL(8,2) NOT NULL,
   `employer_contribution` DECIMAL(8,2) NOT NULL,
-  `assessment_result_id` INT(11) NOT NULL,
-  `assessment_result_emp_pension_id` VARCHAR(40) NOT NULL,
-  PRIMARY KEY (`id`, `assessment_result_id`, `assessment_result_emp_pension_id`),
+  `employee_assessment_id` INT(11) NOT NULL,
+  `employee_assessment_emp_pension_id` VARCHAR(40) NOT NULL,
+  PRIMARY KEY (`id`, `employee_assessment_id`, `employee_assessment_emp_pension_id`),
   UNIQUE INDEX `idcontribution_UNIQUE` (`id` ASC) VISIBLE,
-  INDEX `fk_contribution_assessment_result1_idx` (`assessment_result_id` ASC, `assessment_result_emp_pension_id` ASC) VISIBLE,
-  CONSTRAINT `fk_contribution_assessment_result1`
-    FOREIGN KEY (`assessment_result_id` , `assessment_result_emp_pension_id`)
-    REFERENCES `salaroo_uk_pension_test`.`assessment_result` (`id` , `emp_pension_id`))
+  INDEX `fk_contribution_employee_assessment1_idx` (`employee_assessment_id` ASC, `employee_assessment_emp_pension_id` ASC) VISIBLE,
+  CONSTRAINT `fk_contribution_employee_assessment1`
+    FOREIGN KEY (`employee_assessment_id` , `employee_assessment_emp_pension_id`)
+    REFERENCES `salaroo_uk_pension_test`.`employee_assessment` (`id` , `emp_pension_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -753,7 +753,7 @@ DELIMITER $$
 USE `salaroo_uk_pension_test`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `get_last_assessment_for_emp`(IN empPenId VARCHAR(40))
 BEGIN
-	SELECT * FROM assessment_result WHERE emp_pension_id = empPenId
+	SELECT * FROM employee_assessment WHERE emp_pension_id = empPenId
 	ORDER BY assessment_date LIMIT 1;
 END$$
 
@@ -862,12 +862,12 @@ END$$
 
 
 USE `salaroo_uk_pension_test`$$
-DROP TRIGGER IF EXISTS `salaroo_uk_pension_test`.`assessment_result_BEFORE_INSERT` $$
+DROP TRIGGER IF EXISTS `salaroo_uk_pension_test`.`employee_assessment_BEFORE_INSERT` $$
 USE `salaroo_uk_pension_test`$$
 CREATE
 DEFINER=`root`@`localhost`
-TRIGGER `salaroo_uk_pension_test`.`assessment_result_BEFORE_INSERT`
-BEFORE INSERT ON `salaroo_uk_pension_test`.`assessment_result`
+TRIGGER `salaroo_uk_pension_test`.`employee_assessment_BEFORE_INSERT`
+BEFORE INSERT ON `salaroo_uk_pension_test`.`employee_assessment`
 FOR EACH ROW
 BEGIN
 	SET NEW.assessment_date = now();
