@@ -10,10 +10,9 @@ BEGIN
     INTO noticeTypeId, noticeDueBy, noticeSentOn
     FROM temp_test_data;
     
-    TRUNCATE `salaroo_uk_pension_test`.`notices_due`;
+    TRUNCATE notices_due;
     IF noticeTypeId IS NOT NULL THEN
-		INSERT INTO 
-			`salaroo_uk_pension_test`.`notices_due` 
+		INSERT INTO notices_due
 			(`notice_type_id`, `notice_due_by`, `notice_sent_on`, `employee_pension_id`, `employee_id`) 
 		VALUES 
 			(noticeTypeId, noticeDueBy, noticeSentOn, empPenId, empId);
