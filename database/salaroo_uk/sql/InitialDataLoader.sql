@@ -9,7 +9,7 @@ CALL create_payroll_dates(@employer_tax_year);
 
 -- PAYROLL BELOW
 TRUNCATE tax_year;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\tax_year.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\tax_year.csv'
 INTO TABLE tax_year 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -17,7 +17,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE minimum_wage;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\minimum_wage.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\minimum_wage.csv'
 INTO TABLE minimum_wage 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -25,7 +25,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE student_loan;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\student_loan.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\student_loan.csv'
 INTO TABLE student_loan 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -33,7 +33,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE leave_type;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\leave_type.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\leave_type.csv'
 INTO TABLE leave_type 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -41,7 +41,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE leave_booking;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\leave_booking.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\leave_booking.csv'
 INTO TABLE leave_booking 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -49,7 +49,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE employment_type;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\employment_type.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\employment_type.csv'
 INTO TABLE employment_type 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -57,7 +57,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE employer;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\employer.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\employer.csv'
 INTO TABLE employer 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -65,7 +65,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE employee_payroll_details;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\employee_payroll_details.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\employee_payroll_details.csv'
 INTO TABLE employee_payroll_details 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -73,7 +73,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE salary_sacrifice;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\salary_sacrifice.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\salary_sacrifice.csv'
 INTO TABLE salary_sacrifice 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -81,7 +81,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE employee_salary_sacrifice;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\employee_salary_sacrifice.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\employee_salary_sacrifice.csv'
 INTO TABLE employee_salary_sacrifice 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -89,7 +89,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE aeo_type;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\aeo_type.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\aeo_type.csv'
 INTO TABLE aeo_type 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -97,7 +97,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE aeo_agency;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\aeo_agency.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\aeo_agency.csv'
 INTO TABLE aeo_agency 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -105,7 +105,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE address;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\emp_address.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\emp_address.csv'
 INTO TABLE address 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -113,7 +113,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE employee;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\emp.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\emp.csv'
 INTO TABLE employee 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -121,7 +121,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE employee_hr;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\employee_hr.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\employee_hr.csv'
 INTO TABLE employee_hr 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -129,7 +129,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE employee_aeo;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\emp_aeo_data.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\emp_aeo_data.csv'
 INTO TABLE employee_aeo 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -137,7 +137,7 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
 TRUNCATE payroll_frequency;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll_frequency.csv'
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\payroll\\payroll_frequency.csv'
 INTO TABLE payroll_frequency 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
