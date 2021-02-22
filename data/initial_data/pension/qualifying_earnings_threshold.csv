@@ -1,0 +1,6 @@
+tax_year,pay_frequency,lower,upper,earnings_trig_for_auto_enrolment
+2021,W1,120,962,192
+2021,W2,240,1924,384
+2021,W4,480,3847,768
+2021,M1,520,4167,833
+2021,MA,6240,50000,10000

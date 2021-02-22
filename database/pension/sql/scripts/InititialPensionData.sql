@@ -89,6 +89,24 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
+TRUNCATE minimum_contribution;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\minimum_contribution.csv'
+INTO TABLE minimum_contribution 
+CHARACTER SET latin1
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+TRUNCATE qualifying_earnings_threshold;
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\qualifying_earnings_threshold.csv'
+INTO TABLE qualifying_earnings_threshold 
+CHARACTER SET latin1
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
 TRUNCATE state_pension_age_67_to_68;
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\initial_data\\pension\\state_pension_age_67_to_68.csv'
 INTO TABLE state_pension_age_67_to_68 
