@@ -18,8 +18,9 @@ BEGIN
 		ORDER BY record_date DESC LIMIT 1
 		) 
 		SELECT 
-			prp.pay_frequency, prp.prp_number, prp.date_from, prp.date_to, prp.run_payroll_on, prp.pay_emps_on,
-			prp_qe.pay_reference_period_id, prp_qe.employee_pension_id, prp_qe.record_date, prp_qe.amount, prp_qe.prp_tax_year	
+			prp.*,
+			prp_qe.pay_reference_period_id, prp_qe.employee_pension_id, 
+            prp_qe.record_date, prp_qe.amount, prp_qe.prp_tax_year	
 			FROM 
 				prp_qe
 				RIGHT JOIN pay_reference_period prp 
