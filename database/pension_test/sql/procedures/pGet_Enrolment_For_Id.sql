@@ -1,4 +1,4 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_enrolment_for_id`(IN enrlId INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_enrolment_for_id`(IN id INT)
 BEGIN
-	SELECT * FROM employee_enroled WHERE id = enrlId;
+	SELECT * FROM employee_enroled WHERE employee_enroled.id = id;
 END
