@@ -1,18 +1,18 @@
-test_num,test_group,category,description,payroll_params_test_num,salary_test_num,aeo_test_num,student_loan_test_num,ytd_test_num,pension_test_num,salary_sacrifice_test_num
-1,-1,Test,A simple test with just salary data #1. Use for 'testing' the tests.,1,1,-1,-1,1,-1,-1
-2,-1,Test,A test with all data except pension. Use for 'testing' the tests.,1,1,1,1,1,-1,-1
-3,1,Test,A group test. All fields should be zero. Use for 'testing' the tests.,1,-1,-1,-1,1,-1,-1
-4,-1,AEO - DEO,Deduct all for a DEO.,1,1,1,-1,1,-1,-1
-5,-1,AEO - DEO,Deduct part for a DEO. The PE amount prevents a full deduction.,1,1,2,-1,1,-1,-1
-6,-1,AEO - DEO,Deduct nothing for a DEO. The PE amount prevents any deduction.,1,1,3,-1,1,-1,-1
-7,-1,AEO - DEO,Deduct nothing for a DEO. The PE amount prevents any deduction. CF the PE because the order is pre march 2003.,1,1,4,-1,1,-1,-1
-8,-1,AEO - DEO,Deduct part for a DEO. The PE amount prevents a full deduction. Has unpaid BF = £100 so this should be added to the overall deduction.,1,1,5,-1,1,-1,-1
-9,-1,AEO - DEA,Deduct all for a DEA. Uses the lower rate table.,1,1,6,-1,1,-1,-1
-10,-1,AEO - DEA,Deduct all for a DEA. Uses the higher rate table.,1,1,7,-1,1,-1,-1
-11,-1,AEO - DEA,Deduct all for a DEA. Uses the higher rate table. Carries forward some deduction because PE is too high.,1,1,8,-1,1,-1,-1
-12,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 3 - post april 2007,1,1,9,-1,1,-1,-1
-13,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 2 - 1 October 1998 and 31 March 2007,1,12,10,-1,1,-1,-1
-14,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 1 - pre October 1998,1,12,11,-1,1,-1,-1
-15,-1,AEO - CTAEO,Deduct nothing for a CTAEO because there are no earnings,1,18,11,-1,1,-1,-1
-16,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 1 - pre October 1998. Use the 50% rule because the salary is high enough.,1,4,11,-1,1,-1,-1
-17,-1,SS,Standard pension for salary sacrifice.,1,1,-1,-1,1,-1,1
+test_num,test_group,category,description,test_date,employee_payroll_id,salary_test_num,aeo_test_num,student_loan_test_num,ytd_test_num,pension_test_num,salary_sacrifice_test_num
+1,-1,Test,A simple test with just salary data #1. Use for 'testing' the tests.,2021-01-01,NI123456D,1,-1,-1,1,-1,-1
+2,-1,Test,A test with all data except pension. Use for 'testing' the tests.,2021-01-02,NI123456D,1,1,1,1,-1,-1
+3,1,Test,A group test. All fields should be zero. Use for 'testing' the tests.,2021-01-03,NI123456D,-1,-1,-1,1,-1,-1
+4,-1,AEO - DEO,Deduct all for a DEO.,2021-01-04,NI123456D,1,1,-1,1,-1,-1
+5,-1,AEO - DEO,Deduct part for a DEO. The PE amount prevents a full deduction.,2021-01-05,NI123456D,1,2,-1,1,-1,-1
+6,-1,AEO - DEO,Deduct nothing for a DEO. The PE amount prevents any deduction.,2021-01-06,NI123456D,1,3,-1,1,-1,-1
+7,-1,AEO - DEO,Deduct nothing for a DEO. The PE amount prevents any deduction. CF the PE because the order is pre march 2003.,2021-01-07,NI123456D,1,4,-1,1,-1,-1
+8,-1,AEO - DEO,Deduct part for a DEO. The PE amount prevents a full deduction. Has unpaid BF = £100 so this should be added to the overall deduction.,2021-01-08,NI123456D,1,5,-1,1,-1,-1
+9,-1,AEO - DEA,Deduct all for a DEA. Uses the lower rate table.,2021-01-09,NI123456D,1,6,-1,1,-1,-1
+10,-1,AEO - DEA,Deduct all for a DEA. Uses the higher rate table.,2021-01-10,NI123456D,1,7,-1,1,-1,-1
+11,-1,AEO - DEA,Deduct all for a DEA. Uses the higher rate table. Carries forward some deduction because PE is too high.,2021-01-11,NI123456D,1,8,-1,1,-1,-1
+12,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 3 - post april 2007,2021-01-12,NI123456D,1,9,-1,1,-1,-1
+13,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 2 - 1 October 1998 and 31 March 2007,2021-01-13,NI123456D,12,10,-1,1,-1,-1
+14,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 1 - pre October 1998,2021-01-14,NI123456D,12,11,-1,1,-1,-1
+15,-1,AEO - CTAEO,Deduct nothing for a CTAEO because there are no earnings,2021-01-15,NI123456D,18,11,-1,1,-1,-1
+16,-1,AEO - CTAEO,Deduct all for a CTAEO - Table 1 - pre October 1998. Use the 50% rule because the salary is high enough.,2021-01-16,NI123456D,4,11,-1,1,-1,-1
+17,-1,SS,Standard pension for salary sacrifice.,2021-01-17,NI123456D,1,-1,-1,1,-1,1

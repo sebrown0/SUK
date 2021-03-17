@@ -14,10 +14,12 @@ BEGIN
 		SET @sql = CONCAT('select * from test_data_aeo where ', testNumCol, ' = ', testNum, ' order by priority'); 
     ELSEIF testTable = 'test_data_student_loan' THEN
 		SET @sql = CONCAT('select * from test_data_student_loan where ', testNumCol, ' = ', testNum, ' order by loan_type'); 
+	/* NOW USING PROC get_test_emp_for_test_num
     ELSEIF testTable = 'test_data_employee' THEN
 		SET @sql = CONCAT('SELECT emp.* FROM test_data_payroll_params params 
 			INNER JOIN test_data_employee emp 
 				ON params.emp_payroll_id = emp.payroll_id WHERE params.payroll_params_test_num = ', testNum);         
+	*/
     ELSE    
 		SET @sql = CONCAT('select * from ', testTable, ' where ', testNumCol, ' = ', testNum); 
     END IF;

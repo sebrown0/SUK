@@ -48,27 +48,9 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-TRUNCATE test_data_employee;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\payroll\\test_data_employee.csv'
-INTO TABLE test_data_employee 
-CHARACTER SET latin1
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
 TRUNCATE test_data_salary_sacrifice;
 LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\payroll\\test_data_salary_sacrifice.csv'
 INTO TABLE test_data_salary_sacrifice 
-CHARACTER SET latin1
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS;
-
-TRUNCATE test_data_payroll_params;
-LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\salaroo_uk\\data\\test_data\\payroll\\test_data_payroll_params.csv'
-INTO TABLE test_data_payroll_params 
 CHARACTER SET latin1
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'

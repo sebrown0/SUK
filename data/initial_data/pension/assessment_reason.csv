@@ -7,3 +7,5 @@ DUTIES_START_DATE,Assess at employer's duties start date
 EJH_TRIGGER,Assess because employee has become Eligible Job Holder
 OPT_IN,Employee has opted in.
 PAYROLL,Asses at payroll run.
+ASSESSMENT,An assessment for any reason
+AE_AGE,Auto Enrolment age
