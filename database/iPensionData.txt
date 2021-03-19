@@ -1,0 +1,6 @@
+Option Explicit
+
+Public Sub AddToAllPenData(ByVal allData As cDTO_Pen_All)
+End Sub
+
+iPensionData
