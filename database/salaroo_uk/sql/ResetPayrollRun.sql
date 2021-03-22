@@ -1,11 +1,11 @@
-CALL reset_payroll_run();
+-- CALL reset_payroll_run();
 
-/*
+
 delete FROM payroll_leave where id != '';
 delete FROM payroll_student_loan where id != '';
 delete FROM payroll_aeo where id != '';
 delete FROM payroll_data where id != '';
-delete FROM employee_payroll_result where id != '';
+delete FROM payroll_result_payment where id != '';
 delete FROM payroll_result_deduction where id != '';
 delete FROM payroll_run where id !='';
 
