@@ -1,2 +1,2 @@
-id,employer_id
-2021,DAK1
+id,employer_id,is_current_tax_year
+2021,DAK1,1
