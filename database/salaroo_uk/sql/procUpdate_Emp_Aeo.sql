@@ -8,7 +8,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `update_emp_aeo`(
         IN aeoStatus TINYINT, 
         IN frequency TINYINT, 
         IN ytd DECIMAL(8,2), 
-        IN startDate DATE, 
         IN originalAmount DECIMAL(8,2),
         IN currentAmount DECIMAL(8,2), 
         IN cumulativeUnpaid DECIMAL(8,2), 
@@ -20,16 +19,18 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `update_emp_aeo`(
         IN aeoDescription VARCHAR(145),  
         IN deductAdminCharge TINYINT, 
         IN deductionAmount DECIMAL(8,2), 
-        IN peAmount DECIMAL(8,2))
+        IN peAmount DECIMAL(8,2),
+        IN paidInPreviousEmployment DECIMAL(9,2),
+        IN usesDEAHigherRate TINYINT)
 BEGIN
 	INSERT INTO employee_aeo (
 		`id`, `employee_id`, `aeo_type_id`, `aeo_agency_id`, `date_added_to_payroll`, `priority`, 
-		`status`, `frequency`, `ytd`, `start_date`, `original_amount`, `current_amount`, `cumulative_unpaid`, `order_date`, `apply_from`, 
-		`stop_order`, `ref_number`, `court_case_number`, `description`, `deduct_admin_charge`, `deduction_amount`, `pe_amount`)
+		`status`, `frequency`, `ytd`, `original_amount`, `current_amount`, `cumulative_unpaid`, `order_date`, `apply_from`, 
+		`stop_order`, `ref_number`, `court_case_number`, `description`, `deduct_admin_charge`, `deduction_amount`, `pe_amount`, `amount_paid_in_previous_employment`,`uses_dea_higher_rate`)
 	VALUES (
 		empAeoId, employeeId, aeoTypeId, aeoAgencyId, dateAddedToPayroll, priority, 
-        aeoStatus, frequency, ytd, 	startDate, originalAmount, currentAmount, cumulativeUnpaid, orderDate, applyFrom, 
-        stopOrder, refNumber, courtCaseNumber, aeoDescription, deductAdminCharge, deductionAmount, peAmount)
+        aeoStatus, frequency, ytd, originalAmount, currentAmount, cumulativeUnpaid, orderDate, applyFrom, 
+        stopOrder, refNumber, courtCaseNumber, aeoDescription, deductAdminCharge, deductionAmount, peAmount, paidInPreviousEmployment, usesDEAHigherRate)
 	ON DUPLICATE KEY UPDATE
 		`aeo_type_id` = aeoTypeId, 
         `aeo_agency_id` = aeoAgencyId, 
@@ -38,7 +39,6 @@ BEGIN
 		`status` = aeoStatus, 
         `frequency` = frequency, 
         `ytd` = ytd, 
-        `start_date` = startDate, 
         `original_amount` = originalAmount, 
         `current_amount` = currentAmount, 
         `cumulative_unpaid` = cumulativeUnpaid, 
@@ -50,5 +50,7 @@ BEGIN
         `description` = aeoDescription, 
         `deduct_admin_charge` = deductAdminCharge, 
         `deduction_amount` = deductionAmount, 
-        `pe_amount` = peAmount;
+        `pe_amount` = peAmount,
+        `amount_paid_in_previous_employment` = paidInPreviousEmployment,
+        `uses_dea_higher_rate` = usesDEAHigherRate;
 END
