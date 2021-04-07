@@ -13,7 +13,7 @@ BEGIN
 	DECLARE ppId INT;
     
     SELECT id INTO ppID 
-    FROM postponement_approach WHERE
+    FROM salaroo_uk_pension.postponement_approach WHERE
     `description` = postponementApproach;
 	
     UPDATE 
@@ -26,7 +26,7 @@ BEGIN
         self_assesment_utr = selfAssesmentUtr, 
         cotax_reference = cotaxReference, 
         salary_sacrifice_ni_retained = salarySacrificeNiRetained, 
-        postponement_approach_id = postponementApproach, 
+        postponement_approach_id = ppID,
         apportionment_rule = apportionmentRule, 
         duties_start_date = dutiesStartDate;
 END
